@@ -91,7 +91,7 @@
 
 
 ### **Purpose:**
-
+**Initiate a refund by sending a request with the required transaction and amount details.**
 
 ### **Endpoint:**
 
