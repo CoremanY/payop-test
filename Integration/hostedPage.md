@@ -131,7 +131,7 @@ The response includes method identifiers and the required payer fields for each 
 ```
 
 
-**Collect Payer Data** 
+3. **Collect Payer Data** 
 Based on the payment method selected, request the required fields from the payer.  
 For the example above, the required fields are:  
     * `email`
@@ -141,7 +141,7 @@ For the example above, the required fields are:
     * `bank_type`
     * `bank_country`
 
-**Create Checkout Transaction** 
+4. **Create Checkout Transaction** 
 Once all required data is collected, send a POST request to create the transaction:
 
 
@@ -204,7 +204,7 @@ curl -X POST "https://api.payop.com/v1/checkout/create" \
 ```
 
 
-**Check Invoice Status (Polling)** 
+5. **Check Invoice Status (Polling)** 
 Use long-polling to check the status of the transaction using:
 
 ```shell
@@ -242,10 +242,11 @@ curl -X GET "https://api.payop.com/v1/checkout/check-invoice-status/{invoiceID}"
 
 Use the `method` and `fields` returned in the `data.form` object to construct a form and submit it from the browser. After the user completes the payment on the provider's side, they will be redirected back to either the success or fail page based on the final result.
 
-**Receive IPN (Instant Payment Notification)** If IPNs are configured, Payop will automatically notify your server when the transaction status changes. This ensures your backend is updated even if the user does not return to your site. \
+6. **Receive IPN (Instant Payment Notification)** If IPNs are configured, Payop will automatically notify your server when the transaction status changes. This ensures your backend is updated even if the user does not return to your site. \
  *(See[ Checkout → IPN](https://team-whitetech.atlassian.net/wiki/spaces/PSP1/pages/4346019953/General+API+Integration+Description#) section for more details)*
 
 
+---
 ### **Checkout Flow Summary**
 
 1. **Call payment methods list endpoint** to get available methods with required payer fields.
@@ -257,7 +258,7 @@ Use the `method` and `fields` returned in the `data.form` object to construct a 
     * `fail` → Fail page
     * `pending` → Payment provider page → then redirected to final status page
 
-
+---
 ### **Advantages of Direct Integration**
 
 ✅ **Optimized User Flow**  
@@ -269,7 +270,7 @@ No need to navigate through intermediate Payop-hosted method selection pages. Th
 ✅ **Ideal for Complex Checkout Use Cases**
 Perfect for platforms and systems that require tighter integration or more advanced UX control, such as e-commerce platforms, SaaS tools, or mobile apps.
 
-
+---
 ### **Best Use Cases**
 
 
