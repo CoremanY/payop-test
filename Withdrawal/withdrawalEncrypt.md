@@ -14,7 +14,7 @@
 5. **Download the <code>x25519.pub</code> certificate file.**
 6. **Save the file to your working directory (e.g., <code>/project/x25519.pub</code>).**
 
-    **🔐 This certificate is used to encrypt the payload so only Payop can decrypt it.**
+> 🔐 This certificate is used to encrypt the payload so only Payop can decrypt it.
 
 
 
@@ -94,7 +94,7 @@ echo "Encrypted payload:\n" . $base64Payload;
 ** **
 
 
-    **⚠️ PHP 7.2+ includes Sodium natively. No extra dependencies needed.**
+> ⚠️ PHP 7.2+ includes Sodium natively. No extra dependencies needed.
 
 
 ---
@@ -115,7 +115,7 @@ curl -X POST https://api.payop.com/v1/withdrawals/create-mass \
 }'
 ```
 
-    **Replace <code>"YOUR_BASE64_ENCRYPTED_PAYLOAD_HERE"</code> with the output from the PHP script above.**
+> Replace <code>"YOUR_BASE64_ENCRYPTED_PAYLOAD_HERE"</code> with the output from the PHP script above.
 
 
 ### **✅ Example Encrypted Payload**
