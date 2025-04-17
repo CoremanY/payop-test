@@ -11,13 +11,13 @@ Each request to Payop API should have a `Content-Type` HTTPS header with `applic
 
 ### 0. Integration
 
-*Integration via API 
-  *[API Integration Types](Integration/integrationApiTypes.md)  
+* Integration via API 
+  * [API Integration Types](Integration/integrationApiTypes.md)  
    * Pre-setup integration plugins  
       * [Woocommerce](https://github.com/Payop/woocommerce-plugin)  
           
-*[Response examples](Integration/responses.md)  
-*[Signature generation](Integration/signatureGenerator.md)  
+* [Response examples](Integration/responses.md)  
+* [Signature generation](Integration/signatureGenerator.md)  
 
 ### 1. Invoice
 
