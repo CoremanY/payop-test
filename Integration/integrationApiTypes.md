@@ -19,7 +19,7 @@ The **Hosted Page Integration** is the **simplest** and **most convenient** meth
 **🔹3. Payer Enters Required Data:** On the Payop checkout page, the payer fills in necessary details (e.g., name, date of birth, email, etc.).  
 **🔹4. Automatic Processing** – Payop determines the next steps, such as selecting the appropriate payment method or requiring additional details.  
 **🔹5. Payment Confirmation** – If the payment is successful, the payer is redirected to the `resultUrl`. If the payment fails, the payer is redirected to the `failPath`.  
-**🔹6. **Receive IPN (Instant Payment Notification)** If IPNs are configured, Payop will automatically notify your server when the transaction status changes. This ensures your backend is updated even if the user does not return to your site.   \
+**🔹6. Receive IPN (Instant Payment Notification)** If IPNs are configured, Payop will automatically notify your server when the transaction status changes. This ensures your backend is updated even if the user does not return to your site.   \
  *(See[ Checkout → IPN](LINK)*
 
 
@@ -246,8 +246,10 @@ curl -X GET "https://api.payop.com/v1/checkout/check-invoice-status/{invoiceID}"
 
 Use the `method` and `fields` returned in the `data.form` object to construct a form and submit it from the browser. After the user completes the payment on the provider's side, they will be redirected back to either the success or fail page based on the final result.
 
-**🔹6. Receive IPN (Instant Payment Notification)** If IPNs are configured, Payop will automatically notify your server when the transaction status changes. This ensures your backend is updated even if the user does not return to your site. \
- *(See[ Checkout → IPN](https://team-whitetech.atlassian.net/wiki/spaces/PSP1/pages/4346019953/General+API+Integration+Description#) section for more details)*
+**🔹6. Receive IPN (Instant Payment Notification)** 
+
+If IPNs are configured, Payop will automatically notify your server when the transaction status changes. This ensures your backend is updated even if the user does not return to your site. \
+*(See[Checkout → IPN](https://team-whitetech.atlassian.net/wiki/spaces/PSP1/pages/4346019953/General+API+Integration+Description#) section for more details)*
 
 
 ---
