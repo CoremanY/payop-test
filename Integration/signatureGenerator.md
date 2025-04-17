@@ -3,7 +3,7 @@
 This PHP script helps generate a **SHA-256 signature** for securing your payment requests. Follow the steps below to generate a signature.
 
 
-#### **PHP script**
+#### **PHP script:**
 
 
 ```shell
