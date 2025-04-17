@@ -21,8 +21,9 @@ Content-Type: application/json
 Authorization: Bearer YOUR_JWT_TOKEN
 ```
 
-* <strong>Tokens can be generated in the Payop dashboard and should be securely stored.</strong>
-[![Watch the video](https://img.youtube.com/vi/your_video_id/0.jpg)](https://www.youtube.com/watch?v=Q7vlfEpJMRA)
+* <strong>Tokens can be generated in the Payop dashboard and should be securely stored.</strong>  
+
+[![Watch the video "How to create a JWT token?](https://img.youtube.com/vi/Q7vlfEpJMRA/0.jpg)](https://www.youtube.com/watch?v=Q7vlfEpJMRA)
 
 
 > **Deprecated: Using tokens in the header directly is discouraged, and this method may be removed in future API versions.**
