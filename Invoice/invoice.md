@@ -273,9 +273,6 @@ curl -X POST "https://api.payop.com/v1/invoices/create" \
 ```
 
 
-** **
-
-
 ## **2. Get Invoice Info**
 
 
@@ -313,9 +310,6 @@ curl -X GET "https://api.payop.com/v1/invoices/{invoiceID}" \
  -H "Content-Type: application/json"
 
 ```
-
-
-** **
 
 
 #### **Successful Response Example:**
@@ -357,9 +351,6 @@ curl -X GET "https://api.payop.com/v1/invoices/{invoiceID}" \
 }
 
 ```
-
-
-** **
 
 
 #### **Error Response Example (Invoice Not Found):**
@@ -431,10 +422,6 @@ curl -X GET "https://api.payop.com/v1/invoices/{invoiceID}" \
 </table>
 
 
-
----
-
-
 ## **3. Get Available Payment Methods**
 
 
@@ -468,14 +455,11 @@ GET https://api.payop.com/v1/instrument-settings/payment-methods/available-for-a
 
 ```shell
 curl -X GET "https://api.payop.com/v1/instrument-settings/payment-methods/available-for-application/{APPLICATION_ID}" \
-
  -H "Content-Type: application/json" \
-
  -H "Authorization: Bearer YOUR_JWT_TOKEN"
 ```
 
 
-** **
 
 
 #### **Successful Response Example:**
@@ -518,9 +502,6 @@ curl -X GET "https://api.payop.com/v1/instrument-settings/payment-methods/availa
 ```
 
 
-** **
-
-
 #### **Error Response Example (Invalid Token):**
 
 
@@ -529,6 +510,3 @@ curl -X GET "https://api.payop.com/v1/instrument-settings/payment-methods/availa
  "message": "Authorization token invalid"
 }
 ```
-
-
-** **
