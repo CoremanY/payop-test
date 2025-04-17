@@ -30,7 +30,7 @@ An invoice is the core element of any payment. Every payment is made against an 
 
  Handling Payments Through the Checkout Flow
 
- * [IPN (instant payment notification)](Checkout/checkout.md)
+ * [Checkout](Checkout/checkout.md)
 
 
 ### 3. Withdrawal
