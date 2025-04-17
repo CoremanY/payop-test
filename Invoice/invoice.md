@@ -257,7 +257,7 @@ curl -X POST "https://api.payop.com/v1/invoices/create" \
 ```
 
 
->**Note:**  
+>**Note:**
 >* **The invoice identifier is returned in the <code>identifier</code> header.**
 >* **Do not use the identifier in the response body (it will be removed in future API versions).**
 
