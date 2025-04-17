@@ -63,7 +63,7 @@ This method is ideal for businesses with development resources who want to embed
 
 ### **How It Works**
 
-**1.Create invoice**
+**🔹1. Create invoice**
 
 Use your **public key and signature** to create invoice via the API:
 
@@ -93,7 +93,7 @@ curl -X POST "https://api.payop.com/v1/invoices/create" \
 ```
 
 
-**2.Retrieve Available Payment Methods**
+**🔹2. Retrieve Available Payment Methods**
 Use your **application ID** to retrieve a list of available payment methods via the API:
 
 ```shell
@@ -131,7 +131,7 @@ The response includes method identifiers and the required payer fields for each 
 ```
 
 
-**3.Collect Payer Data** 
+**🔹3. Collect Payer Data** 
 Based on the payment method selected, request the required fields from the payer.  
 For the example above, the required fields are:  
     * `email`
@@ -141,7 +141,7 @@ For the example above, the required fields are:
     * `bank_type`
     * `bank_country`
 
-**4.Create Checkout Transaction** 
+**🔹4. Create Checkout Transaction** 
 Once all required data is collected, send a POST request to create the transaction:
 
 
@@ -204,7 +204,7 @@ curl -X POST "https://api.payop.com/v1/checkout/create" \
 ```
 
 
-**5.Check Invoice Status (Polling)**  
+**🔹5. Check Invoice Status (Polling)**  
 Use long-polling to check the status of the transaction using:
 
 ```shell
@@ -241,7 +241,7 @@ curl -X GET "https://api.payop.com/v1/checkout/check-invoice-status/{invoiceID}"
 
 Use the `method` and `fields` returned in the `data.form` object to construct a form and submit it from the browser. After the user completes the payment on the provider's side, they will be redirected back to either the success or fail page based on the final result.
 
-**6.Receive IPN (Instant Payment Notification)** If IPNs are configured, Payop will automatically notify your server when the transaction status changes. This ensures your backend is updated even if the user does not return to your site. \
+**🔹6. Receive IPN (Instant Payment Notification)** If IPNs are configured, Payop will automatically notify your server when the transaction status changes. This ensures your backend is updated even if the user does not return to your site. \
  *(See[ Checkout → IPN](https://team-whitetech.atlassian.net/wiki/spaces/PSP1/pages/4346019953/General+API+Integration+Description#) section for more details)*
 
 
