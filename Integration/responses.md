@@ -7,7 +7,7 @@
 
 ### **200 OK**
 
-  **The request was successfully processed.**
+> **The request was successfully processed.**
 
 **Example:**
 
@@ -33,7 +33,7 @@
 
 
 ### **201 Created**
-  **The resource was successfully created (e.g., token, invoice, transaction).**
+> **The resource was successfully created (e.g., token, invoice, transaction).**
 
 
 **Example:**
@@ -95,7 +95,7 @@
 ### **401 Unauthorized**
 
 
-    **Authentication token is missing, expired, or invalid.**
+> **Authentication token is missing, expired, or invalid.**
 
 
 ```shell
@@ -125,7 +125,7 @@ json{   "message": "Full authentication is required to access this resource." }
 ### **404 Not Found**
 
 
-    **The requested resource could not be found (e.g., invoice or transaction ID is incorrect).**
+> **The requested resource could not be found (e.g., invoice or transaction ID is incorrect).**
 
 
 ```shell
@@ -139,7 +139,7 @@ json{   "message": "Full authentication is required to access this resource." }
 ### **422 Unprocessable Entity**
 
 
-    **The request was understood, but it failed validation or a required feature is not enabled.**
+>  **The request was understood, but it failed validation or a required feature is not enabled.**
 
 
 #### **🔸 Case: Payment method not enabled**
@@ -173,7 +173,7 @@ json{   "message": "Full authentication is required to access this resource." }
 ### **500 Internal Server Error**
 
 
-    **A generic error occurred on the server side.**
+> **A generic error occurred on the server side.**
 
 
 ```shell
