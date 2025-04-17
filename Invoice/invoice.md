@@ -23,7 +23,7 @@
   <tr>
    <td><strong>Get Invoice Info</strong>
    </td>
-   <td>![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)
+   <td><strong>GET</strong>
    </td>
    <td><strong><code>/v1/invoices/{invoiceID}</code></strong>
    </td>
