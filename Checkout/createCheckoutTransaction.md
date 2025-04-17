@@ -1,176 +1,411 @@
 * [Back to contents](../Readme.md#contents)
 
-# Create checkout transaction
+# Checkout
 
-* [Intro](#intro)
-* [Endpoint description](#endpoint-description)
-* [Request example](#request-example)
-* [Successful response example](#successful-response-example)
-* [Using the anti-fraud system](#using-the-anti-fraud-system)
+### **Bearer Authentication**
 
-## Intro
 
-**Transaction** - is an entity that reflects the money transfer.
+#### **Purpose:**
 
-----
+* **This document explains how authentication works in the Payop API using JWT-based Bearer Authentication.**
+* **Authentication is required for accessing protected API endpoints.**
 
-**Note:** Checkout transactions can be created only in 
-case of a successful request to the acquirer. This means 
-that attempts to pay an invoice are not limited if the invoice 
-doesn't have a transaction yet and is not overdue.
+#### **How It Works:**
 
-----
+* **Clients must send a JWT token in the <code>Authorization</code> header with each API request.**
+* **Example of required headers:**
 
-----
 
-**Note:** The longest period between creating an 
-invoice and making a checkout is 24 hours. 
-After that, the invoice will expire.
-
-----
-
-## Endpoint description
-
-**Endpoint:**
-
-![POST](https://img.shields.io/badge/-POST-green?style=for-the-badge)
-
-```shell
-https://api.payop.com/v1/checkout/create
-```    
-
-![HEADERS](https://img.shields.io/badge/-Headers-yellowgreen?style=for-the-badge)
-
-```shell
-Content-Type: application/json
+```
+Content-Type: application/json  
+Authorization: Bearer YOUR_JWT_TOKEN
 ```
 
-**Parameters:**
-
-Parameter                       | Type            | Description                                                                                                                                                                                                                                                        | Required |
---------------------------------|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-invoiceIdentifier               | string          | Invoice identifier                                                                                                                                                                                                                                                 | *        |
-**customer**                    | **JSON object** | Payer/Customer info                                                                                                                                                                                                                                                | *        |
-&emsp;customer.name             | string          | Name                                                                                                                                                                                                                                                              | *        |
-&emsp;customer.email            | string          | Email                                                                                                                                                                                                                                                              | *        |
-&emsp;customer.ip               | string          | IP adress. We highly recommend adding this parameter to the request for more complete identification of the customer                                                                                                                                               |          |
-&emsp; ...                      | string          | Any data related to the payer/customer                                                                                                                                                                                                                             |          |
-checkStatusUrl                  | string          | [URL to check payment status](checkInvoiceStatus.md)                                                                                                                                                                                                              | *        |
-payCurrency                     | string          | Currency code. Should be passed in case of the payment currency is different from the order currency                                                                                                                                                               |          |
-paymentMethod                   | string          | Payment method id. Required if invoice doesn't have payment method                                                                                                                                                                                                 |          |   
-authOnly                        | bool            | If this parameter is equal to `true`, then authorization places the funds on hold with the customer's bank. When the transaction is [captured](captureTransaction.md), the funds transfer process will occur.                                                      |          |
+* <strong>Tokens can be generated in the Payop dashboard and should be securely stored.</strong>
+[![Watch the video](https://img.youtube.com/vi/your_video_id/0.jpg)](https://www.youtube.com/watch?v=Q7vlfEpJMRA)
 
 
-## Request example
-<!--1. If `paymentMethod.formType` is **cards**:
+> **Deprecated: Using tokens in the header directly is discouraged, and this method may be removed in future API versions.**
 
-```shell
-curl -X POST \
-  https://api.payop.com/v1/checkout/create \
-  -H 'Content-Type: application/json' \
-  -d '{
-	"invoiceIdentifier": "INVOICE_IDENTIFIER",
-	"customer": {"email": "test@email.com", "name":"CUSTOMER_NAME"},
-	"checkStatusUrl": "https://your.site/check-status/{{txid}}",
-	"payCurrency": "EUR",
-	"paymentMethod": 381,
-}'
+
+---
+
+
+## **Checkout Section**
+
+
+### **1. checkInvoiceStatus.md**
+
+
+#### **Purpose:**
+
+
+
+* **This endpoint allows users to check the current status of an invoice after initiating a payment.**
+* **Useful for tracking payments and determining if further action is required.**
+
+
+#### **How It Works:**
+
+
+
+* **A <code>GET</code> request is sent with the <code>invoiceID</code> parameter.**
+* **The response contains one of the following statuses:**
+    * **Pending: The transaction is still being processed.**
+    * **Success: The transaction is completed successfully.**
+    * **Fail: The payment attempt failed.**
+
+
+#### **Example Usage:**
+
+**Request:**
+
+
+```
+GET https://api.payop.com/v1/checkout/check-invoice-status/{invoiceID}
 ```
 
-2. If `paymentMethod.formType` is **not cards**:-->
+
+** **
+
+**Response Examples:**
+
+**Pending (Waiting for further action):**
 
 
-```shell
-curl -X POST \
-  https://api.payop.com/v1/checkout/create \
-  -H 'Content-Type: application/json' \
-  -d '{
-	"invoiceIdentifier": "INVOICE_IDENTIFIER",
-	"customer": {"email": "test@email.com", "name":"CUSTOMER_NAME"},
-	"checkStatusUrl": "https://your.site/check-status/{{txid}}",
-	"payCurrency": "EUR",
-	"paymentMethod": 381
-}'
 ```
-
-## Successful response example
-
-![200](https://img.shields.io/badge/200-OK-blue?style=for-the-badge)
-
-![HEADERS](https://img.shields.io/badge/-Headers-yellowgreen?style=for-the-badge)
-
-```shell
-HTTP/1.1 200 OK
-Content-Type: application/json
-identifier: 81962ed0-a65c-4d1a-851b-b3dbf9750399
-```
-
-![BODY](https://img.shields.io/badge/-BODY-blueviolet?style=for-the-badge)
-
-```json
 {
-    "data": {
-        "isSuccess": true,
-        "message": "",
-        "txid": "e6c8ba69-b961-4e93-a083-2097f30dfbd9"
-    },
-    "status": 1
+
+ "data": {
+
+   "isSuccess": true,
+
+   "status": "pending",
+
+   "url": ""
+
+ },
+
+ "status": 1
+
 }
 ```
 
-Add the generated transaction ID to the waiting 
-page `https://checkout.payop.com/en/payment/wait-page/{{txid}}` and redirect the user to that page. 
-You can then use the check invoice status 
-query to track the transaction's progress.
+
+** **
+
+**Redirect  (POST request required):**
 
 
-## Using the anti-fraud system
+```
+{
 
-You can integrate an optional device fingerprinting module 
-directly into a web app by using a JavaScript agent. Please always use a
-CDN hosted script to ensure you always load the latest available version.
+ "data": {
 
-1. Include the JavaScript Agent inside the tags of your website or web app.
-2. Set a unique `session_id` for your client using the `seon.config()` function.
-3. Call the `seon.getBase64Session()` function to get the encrypted payload for the device.
-4. Add `seon_session` to  [create transaction](createCheckoutTransaction.md#endpoint-description) request.
-	
-```html
-<html>
-    <head>
-        ...
-        <script src="https://cdn.seon.io/js/v6/agent.js"></script>
-    </head>
-  	<body>
-    	...
-  	</body>
-</html>
+   "isSuccess": true,
+
+   "status": "pending",
+
+   "form": {
+
+     "method": "POST",
+
+     "url": "https://acs.anybank.com/",
+
+     "fields": {
+
+       "PaReq": "encrypted_data",
+
+       "MD": "unique_id",
+
+       "TermUrl": "https://payop.com/v1/url"
+
+     }
+
+   }
+
+ },
+
+ "status": 1
+
+}
 ```
 
-----
 
-**Note:** Don’t forget to replace **{session_id}** with your unique session identifier. We recommend to use UUID, but you can use your own implementation as well.
+** **
 
-----
 
-```js
-seon.config({
-        session_id: '{session_id}',
-        audio_fingerprint: true,
-        canvas_fingerprint: true,
-        webgl_fingerprint: true,
-        onSuccess: function(message) {
-		console.log("success", message);
-        },
-        onError: function(message) {
-            	console.log("error", message);
-        }
-});
-seon.getBase64Session(function(data) {
-        if (data) {
-                console.log("Session payload", data);
-        } else {
-                console.log("Failed to retrieve session data.");
-        }
-});
+### **2. createCheckoutTransaction.md**
+
+
+#### **Purpose:**
+
+
+
+* **This endpoint creates a checkout transaction linked to an invoice.**
+* **Required when a customer wants to make a payment.**
+
+
+#### **How It Works:**
+
+
+
+* **A <code>POST</code> request is sent with the invoice details, payment method, and customer information.**
+* **The response returns a unique transaction ID.**
+
+
+#### **Example Usage:**
+
+**Request:**
+
+
+```
+POST https://api.payop.com/v1/checkout/create
+```
+
+
+** **
+
+**Key Parameters:**
+
+
+
+* **<code>invoiceIdentifier</code>: The invoice ID.**
+* **<code>customer</code>: Customer details (name, email, IP address).**
+* **<code>paymentMethod</code>: The payment method ID.**
+* **<code>checkStatusUrl</code>: The URL to check the payment status.**
+
+**Response Example (Success):**
+
+
+```
+{
+
+ "data": {
+
+   "isSuccess": true,
+
+   "message": "",
+
+   "txid": "transaction_unique_id"
+
+ },
+
+ "status": 1
+
+}
+```
+
+
+** **
+
+** **
+
+
+---
+
+
+### **3. getTransaction.md**
+
+
+#### **Purpose:**
+
+
+
+* **Retrieves detailed information about a specific transaction.**
+* **Can be used for monitoring payments and identifying errors.**
+
+
+#### **How It Works:**
+
+
+
+* **A <code>GET</code> request is sent with the transaction ID.**
+* **The response includes transaction status, amount, error messages (if applicable), and payment method details.**
+
+
+#### **Example Usage:**
+
+**Request:**
+
+
+```
+GET https://api.payop.com/v2/transactions/{transactionID}
+```
+
+
+
+### **Headers:**
+
+
+```
+Content-Type: application/
+
+Authorization: Bearer YOUR_JWT_TOKEN
+```
+
+
+**Response Example (Success):**
+
+
+```
+{
+
+ "data": {
+
+   "identifier": "transaction_id",
+
+   "amount": 100,
+
+   "currency": "USD",
+
+   "state": 5,
+
+   "error": "error message",
+
+   "createdAt": 1567402240,
+
+   "orderId": "134666",
+
+   "resultUrl": "https://your.site/result"
+
+ }
+
+}
+```
+
+
+** **
+
+
+---
+
+
+### **4. ipn.md**
+
+
+#### **Purpose:**
+
+
+
+* **Describes how Instant Payment Notification (IPN) works.**
+* **IPNs inform merchants in real-time about payment updates.**
+
+
+#### **How It Works:**
+
+
+
+* **Once a transaction is completed, Payop sends an IPN request to the merchant’s pre-configured IPN URL.**
+* **Merchants should validate the IPN and update their order statuses accordingly.**
+* **IPNs may be sent multiple times until a confirmation (HTTP 200) is received.**
+
+
+#### **Example Usage:**
+
+**IPN Request Format:**
+
+
+```
+{
+
+ "invoice": {
+
+   "id": "invoice_id",
+
+   "status": 1,
+
+   "txid": "transaction_id"
+
+ },
+
+ "transaction": {
+
+   "id": "transaction_id",
+
+   "state": 2,
+
+   "order": { "id": "ORDER_ID" },
+
+   "error": {
+
+     "message": "Error message",
+
+     "code": ""
+
+   }
+
+ }
+
+}
+```
+
+
+
+#### **Handling IPNs:**
+
+
+
+* **Validate the IPN request source (only accept from Payop IPs).**
+* **Ensure transactions are updated based on received status.**
+* **Prevent duplicate processing if the same IPN is received multiple times.**
+
+
+---
+
+
+### **5. voidTransaction.md**
+
+
+#### **Purpose:**
+
+
+
+* **Cancels (voids) a transaction  in status “Pending”.**
+* **Used when the merchant wants to cancel an ongoing transaction and initiate a new one with a fresh invoice**
+
+
+#### **How It Works:**
+
+
+
+* **A <code>POST</code> request is sent with the invoice identifier.**
+* **The response confirms whether the void was successful.**
+
+
+#### **Example Usage:**
+
+**Request:**
+
+
+```
+POST https://api.payop.com/v1/checkout/void
+```
+
+
+**Key Parameter:**
+
+
+
+* **<code>invoiceIdentifier</code>: The unique invoice ID.**
+
+**Response Example (Success):**
+
+
+```
+{
+
+ "data": {
+
+   "isSuccess": true,
+
+   "message": "",
+
+   "txid": "canceled_transaction_id"
+
+ },
+
+ "status": 1
+
+}
 ```
