@@ -5,7 +5,7 @@
 
 | **Action**                         | **Method** | **Endpoint**                                                                 |
 |-----------------------------------|------------|------------------------------------------------------------------------------|
-| **Create Invoice**                | **POST**   | `/v1/invoices/create`                                                       |
+| **Create Invoice**                | ![POST](https://img.shields.io/badge/-POST-green?style=for-the-badge)   | `/v1/invoices/create`                                                       |
 | **Get Invoice Info**              | ![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)   | `/v1/invoices/{invoiceID}`                                                  |
 | **Get Available Payment Methods** | ![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)   | `/v1/instrument-settings/payment-methods/available-for-application/{ID}`   |
 
