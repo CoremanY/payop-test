@@ -236,12 +236,10 @@ curl -X GET "https://api.payop.com/v1/checkout/check-invoice-status/{invoiceID}"
 **Status-Based Actions**
 
 
-    * **If **`status = success 
-`→ Redirect the user to the URL provided in `data.form.url` (e.g., the success page).
-    * **If **`status = fail  
-`→ Redirect the user to the URL provided in `data.form.url`, which will lead to the fail page.
-    * **If **`status = pending  
-`→ Redirect the user to the URL in `data.form.url`, which points to the payment provider's page. \
+    * **If ** `status = success` → Redirect the user to the URL provided in `data.form.url` (e.g., the success page).
+    * **If ** `status = fail` → Redirect the user to the URL provided in `data.form.url`, which will lead to the fail page.
+    * **If ** `status = pending`→ Redirect the user to the URL in `data.form.url`, which points to the payment provider's page. 
+
 Use the `method` and `fields` returned in the `data.form` object to construct a form and submit it from the browser. After the user completes the payment on the provider's side, they will be redirected back to either the success or fail page based on the final result.
 
 **Receive IPN (Instant Payment Notification)** If IPNs are configured, Payop will automatically notify your server when the transaction status changes. This ensures your backend is updated even if the user does not return to your site. \
@@ -282,20 +280,6 @@ Perfect for platforms and systems that require tighter integration or more advan
 
 
 ## **Comparison: Hosted Page vs. Direct Integration**
-
-
-<table>
-  <tr>
-   <td><strong>Feature</strong>
-   </td>
-   <td><strong>Hosted Page</strong>
-   </td>
-   <td><strong>Direct Integration</strong>
-   </td>
-  </tr>
-</table>
-
-
 
 <table>
   <tr>
