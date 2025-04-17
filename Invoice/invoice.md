@@ -3,40 +3,11 @@
 ### **Summary of Invoice API Endpoints**
 
 
-<table>
-  <tr>
-   <td><strong>Action</strong>
-   </td>
-   <td><strong>Method</strong>
-   </td>
-   <td><strong>Endpoint</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Create Invoice</strong>
-   </td>
-   <td><strong>POST</strong>
-   </td>
-   <td><strong><code>/v1/invoices/create</code></strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Get Invoice Info</strong>
-   </td>
-   <td><strong>GET</strong>
-   </td>
-   <td><strong><code>/v1/invoices/{invoiceID}</code></strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Get Available Payment Methods</strong>
-   </td>
-   <td><strong>GET</strong>
-   </td>
-   <td><strong><code>/v1/instrument-settings/payment-methods/available-for-application/{ID}</code></strong>
-   </td>
-  </tr>
-</table>
+| **Action**                         | **Method** | **Endpoint**                                                                 |
+|-----------------------------------|------------|------------------------------------------------------------------------------|
+| **Create Invoice**                | **POST**   | `/v1/invoices/create`                                                       |
+| **Get Invoice Info**              | ![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)   | `/v1/invoices/{invoiceID}`                                                  |
+| **Get Available Payment Methods** | ![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)   | `/v1/instrument-settings/payment-methods/available-for-application/{ID}`   |
 
 
 
