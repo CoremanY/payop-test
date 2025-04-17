@@ -11,8 +11,6 @@
    </td>
    <td><strong>Endpoint</strong>
    </td>
-   <td><strong>Status</strong>
-   </td>
   </tr>
   <tr>
    <td><strong>Create Invoice</strong>
@@ -20,8 +18,6 @@
    <td><strong>POST</strong>
    </td>
    <td><strong><code>/v1/invoices/create</code></strong>
-   </td>
-   <td><strong>CHECKED</strong>
    </td>
   </tr>
   <tr>
@@ -31,8 +27,6 @@
    </td>
    <td><strong><code>/v1/invoices/{invoiceID}</code></strong>
    </td>
-   <td><strong>CHECKED</strong>
-   </td>
   </tr>
   <tr>
    <td><strong>Get Available Payment Methods</strong>
@@ -40,8 +34,6 @@
    <td><strong>GET</strong>
    </td>
    <td><strong><code>/v1/instrument-settings/payment-methods/available-for-application/{ID}</code></strong>
-   </td>
-   <td><strong>CHECKED</strong>
    </td>
   </tr>
 </table>
