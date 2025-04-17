@@ -14,12 +14,12 @@ The **Hosted Page Integration** is the **simplest** and **most convenient** meth
 
 ### **How It Works**
 
-1. **Create an Invoice** – A request is sent to generate a payment invoice. `POST https://api.payop.com/v1/invoices/create` (See the Invoice section for more details)
-2. **Redirect the Payer** – The payer is redirected to the **invoice preprocessing page**. (`https://checkout.payop.com/{{locale}}/payment/invoice-preprocessing/{{invoiceId}}`)
-3. **Payer Enters Required Data:** On the Payop checkout page, the payer fills in necessary details (e.g., name, date of birth, email, etc.).
-4. **Automatic Processing** – Payop determines the next steps, such as selecting the appropriate payment method or requiring additional details.
-5. **Payment Confirmation** – If the payment is successful, the payer is redirected to the `resultUrl`. If the payment fails, the payer is redirected to the `failPath`.
-6. **Receive IPN (Instant Payment Notification)** If IPNs are configured, Payop will automatically notify your server when the transaction status changes. This ensures your backend is updated even if the user does not return to your site. \
+**🔹1. Create an Invoice** – A request is sent to generate a payment invoice. `POST https://api.payop.com/v1/invoices/create` (See the Invoice section for more details)
+**🔹2. Redirect the Payer** – The payer is redirected to the **invoice preprocessing page**. (`https://checkout.payop.com/{{locale}}/payment/invoice-preprocessing/{{invoiceId}}`)
+**🔹3. Payer Enters Required Data:** On the Payop checkout page, the payer fills in necessary details (e.g., name, date of birth, email, etc.).
+**🔹4. Automatic Processing** – Payop determines the next steps, such as selecting the appropriate payment method or requiring additional details.
+**🔹5. Payment Confirmation** – If the payment is successful, the payer is redirected to the `resultUrl`. If the payment fails, the payer is redirected to the `failPath`.
+**🔹6. **Receive IPN (Instant Payment Notification)** If IPNs are configured, Payop will automatically notify your server when the transaction status changes. This ensures your backend is updated even if the user does not return to your site. \
  *(See[ Checkout → IPN](LINK)*
 
 
@@ -134,12 +134,12 @@ The response includes method identifiers and the required payer fields for each 
 **🔹3. Collect Payer Data** 
 Based on the payment method selected, request the required fields from the payer.  
 For the example above, the required fields are:  
-    * `email`
-    * `name`
-    * `date_of_birth`
-    * `bank_code`
-    * `bank_type`
-    * `bank_country`
+  * `email`
+  * `name`
+  * `date_of_birth`
+  * `bank_code`
+  * `bank_type`
+  * `bank_country`
 
 **🔹4. Create Checkout Transaction** 
 Once all required data is collected, send a POST request to create the transaction:
