@@ -231,7 +231,6 @@ curl -X GET "https://api.payop.com/v1/checkout/check-invoice-status/{invoiceID}"
 }
 
 ```
----
 
 **Status-Based Actions**
 
