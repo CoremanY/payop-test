@@ -1,4 +1,4 @@
-### **How to Use the Signature Generator (PHP)**
+# **How to Use the Signature Generator (PHP)**
 
 This PHP script helps generate a **SHA-256 signature** for securing your payment requests. Follow the steps below to generate a signature.
 
