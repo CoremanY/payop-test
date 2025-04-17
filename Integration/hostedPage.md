@@ -93,8 +93,8 @@ curl -X POST "https://api.payop.com/v1/invoices/create" \
 ```
 
 
-2. **Retrieve Available Payment Methods
-**Use your **application ID** to retrieve a list of available payment methods via the API:
+2. **Retrieve Available Payment Methods**
+Use your **application ID** to retrieve a list of available payment methods via the API:
 
 ```shell
 curl -X GET "https://api.payop.com/v1/instrument-settings/payment-methods/available-for-application/{APPLICATION_ID}" \
@@ -103,10 +103,7 @@ curl -X GET "https://api.payop.com/v1/instrument-settings/payment-methods/availa
 
 ```
 
-
-  \
 The response includes method identifiers and the required payer fields for each method. Example response for "Pay by bank":
-
 
 ```shell
 {
@@ -134,9 +131,9 @@ The response includes method identifiers and the required payer fields for each 
 ```
 
 
-**Collect Payer Data \
-** Based on the payment method selected, request the required fields from the payer. \
- For the example above, the required fields are:
+**Collect Payer Data** 
+Based on the payment method selected, request the required fields from the payer.  
+For the example above, the required fields are:  
     * `email`
     * `name`
     * `date_of_birth`
@@ -144,8 +141,8 @@ The response includes method identifiers and the required payer fields for each 
     * `bank_type`
     * `bank_country`
 
-**Create Checkout Transaction \
-** Once all required data is collected, send a POST request to create the transaction:
+**Create Checkout Transaction** 
+Once all required data is collected, send a POST request to create the transaction:
 
 
 ```shell
@@ -170,7 +167,6 @@ curl -X POST "https://api.payop.com/v1/checkout/create" \
 
 ```
 
-  \
 **Request example:**
 
 ```shell
@@ -193,7 +189,6 @@ curl -X POST "https://api.payop.com/v1/checkout/create" \
 ```
 
 
-  \
 **Successful response:**
 
 ```shell
@@ -209,16 +204,14 @@ curl -X POST "https://api.payop.com/v1/checkout/create" \
 ```
 
 
-**Check Invoice Status (Polling) \
-** Use long-polling to check the status of the transaction using:
+**Check Invoice Status (Polling)** 
+Use long-polling to check the status of the transaction using:
 
 ```shell
 curl -X GET "https://api.payop.com/v1/checkout/check-invoice-status/{invoiceID}" \
  -H "Content-Type: application/json" \
 ```
 
-
-  \
 **Possible response:**
 
 
@@ -240,26 +233,22 @@ curl -X GET "https://api.payop.com/v1/checkout/check-invoice-status/{invoiceID}"
 ```
 
 
-  \
 **Status-Based Actions**
 
 
-    * **If **`status = success \
+    * **If **`status = success 
 `→ Redirect the user to the URL provided in `data.form.url` (e.g., the success page).
-    * **If **`status = fail \
+    * **If **`status = fail  
 `→ Redirect the user to the URL provided in `data.form.url`, which will lead to the fail page.
-    * **If **`status = pending \
+    * **If **`status = pending  
 `→ Redirect the user to the URL in `data.form.url`, which points to the payment provider's page. \
 Use the `method` and `fields` returned in the `data.form` object to construct a form and submit it from the browser. After the user completes the payment on the provider's side, they will be redirected back to either the success or fail page based on the final result.
 
-**Receive IPN (Instant Payment Notification) \
-** If IPNs are configured, Payop will automatically notify your server when the transaction status changes. This ensures your backend is updated even if the user does not return to your site. \
+**Receive IPN (Instant Payment Notification)** If IPNs are configured, Payop will automatically notify your server when the transaction status changes. This ensures your backend is updated even if the user does not return to your site. \
  *(See[ Checkout → IPN](https://team-whitetech.atlassian.net/wiki/spaces/PSP1/pages/4346019953/General+API+Integration+Description#) section for more details)*
 
 
 ### **Checkout Flow Summary**
-
-
 
 1. **Call payment methods list endpoint** to get available methods with required payer fields.
 2. **Collect required data** from the payer depending on the selected method.
@@ -273,14 +262,14 @@ Use the `method` and `fields` returned in the `data.form` object to construct a 
 
 ### **Advantages of Direct Integration**
 
-✅ **Optimized User Flow \
-**By embedding required fields and handling logic on the merchant’s side, the number of steps for the payer is reduced—resulting in a smoother, more streamlined experience.
+✅ **Optimized User Flow**  
+By embedding required fields and handling logic on the merchant’s side, the number of steps for the payer is reduced—resulting in a smoother, more streamlined experience.
 
-✅ **Faster Checkout Process \
-**No need to navigate through intermediate Payop-hosted method selection pages. The payer is taken directly to the payment form, speeding up the process.
+✅ **Faster Checkout Process**  
+No need to navigate through intermediate Payop-hosted method selection pages. The payer is taken directly to the payment form, speeding up the process.
 
-✅ **Ideal for Complex Checkout Use Cases \
-**Perfect for platforms and systems that require tighter integration or more advanced UX control, such as e-commerce platforms, SaaS tools, or mobile apps.
+✅ **Ideal for Complex Checkout Use Cases**
+Perfect for platforms and systems that require tighter integration or more advanced UX control, such as e-commerce platforms, SaaS tools, or mobile apps.
 
 
 ### **Best Use Cases**
