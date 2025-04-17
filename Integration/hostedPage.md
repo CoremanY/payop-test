@@ -39,10 +39,10 @@ The **Hosted Page Integration** is the **simplest** and **most convenient** meth
 
 ### **Advantages of Hosted Page Integration**
 
-✅ **Quick Setup:** No development expertise required.
-✅ **Minimal Effort:** Payop handles the checkout process, reducing merchant workload. 
-✅ **Secure and Compliant:** Payment processing fully complies with industry regulations and security standards without requiring additional efforts from merchants 
-✅ **Global Payment Methods:** The payer sees only available methods based on their country and IP.
+✅ **Quick Setup:** No development expertise required.  
+✅ **Minimal Effort:** Payop handles the checkout process, reducing merchant workload.  
+✅ **Secure and Compliant:** Payment processing fully complies with industry regulations and security standards without requiring additional efforts from merchants.  
+✅ **Global Payment Methods:** The payer sees only available methods based on their country and IP.  
 
 
 ### **Best Use Cases**
