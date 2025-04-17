@@ -111,7 +111,7 @@ json{   "message": "Full authentication is required to access this resource." }
 ### **403 Forbidden**
 
 
-    **The authenticated user does not have permission to access the requested resource.**
+> **The authenticated user does not have permission to access the requested resource.**
 
 
 ```shell
