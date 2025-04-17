@@ -25,7 +25,7 @@ Authorization: Bearer YOUR_JWT_TOKEN
 
 **📺 Watch the video "How to create a JWT token?":**  
 
-[![Watch the video "How to create a JWT token?](https://img.youtube.com/vi/Q7vlfEpJMRA/0.jpg)](https://www.youtube.com/watch?v=Q7vlfEpJMRA)
+[![Watch the video "How to create a JWT token?](https://www.youtube.com/watch?v=Q7vlfEpJMRA)
 
 
 > **Deprecated: Using tokens in the header directly is discouraged, and this method may be removed in future API versions.**
