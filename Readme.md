@@ -38,7 +38,7 @@ An invoice is the core element of any payment. Every payment is made against an 
 Steps to prepare and request a withdrawal.
 
 * [Encrypt withdrawal data](Withdrawal/withdrawalEncrypt.md)
-* [Send withdrawal](Withdrawal/withdrawalIpn.md)
+* [Send withdrawal](Withdrawal/withdrawal.md)
    
 ### 4. Refund
     
