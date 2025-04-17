@@ -522,19 +522,6 @@ curl -X GET "https://api.payop.com/v1/refunds/user-refunds" \
    <td>Description
    </td>
   </tr>
-</table>
-
-
-
-<table>
-  <tr>
-   <td>Field
-   </td>
-   <td>Type
-   </td>
-   <td>Description
-   </td>
-  </tr>
   <tr>
    <td><strong><code>transaction.refundId</code></strong>
    </td>
