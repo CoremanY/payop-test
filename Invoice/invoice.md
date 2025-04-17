@@ -284,9 +284,6 @@ GET https://api.payop.com/v1/invoices/{invoiceID}
 ```
 
 
-** **
-
-
 #### **Purpose:**
 
 
