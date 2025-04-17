@@ -37,19 +37,15 @@ Authorization: Bearer YOUR_JWT_TOKEN
 ## **Checkout Section**
 
 
-### **1. checkInvoiceStatus.md**
+### **Check invoice status**
 
 
 #### **Purpose:**
 
-
-
 * **This endpoint allows users to check the current status of an invoice after initiating a payment.**
 * **Useful for tracking payments and determining if further action is required.**
 
-
 #### **How It Works:**
-
 
 
 * **A <code>GET</code> request is sent with the <code>invoiceID</code> parameter.**
@@ -64,7 +60,7 @@ Authorization: Bearer YOUR_JWT_TOKEN
 **Request:**
 
 
-```
+```shell
 GET https://api.payop.com/v1/checkout/check-invoice-status/{invoiceID}
 ```
 
@@ -76,21 +72,14 @@ GET https://api.payop.com/v1/checkout/check-invoice-status/{invoiceID}
 **Pending (Waiting for further action):**
 
 
-```
+```shell
 {
-
  "data": {
-
    "isSuccess": true,
-
    "status": "pending",
-
    "url": ""
-
  },
-
  "status": 1
-
 }
 ```
 
@@ -100,37 +89,23 @@ GET https://api.payop.com/v1/checkout/check-invoice-status/{invoiceID}
 **Redirect  (POST request required):**
 
 
-```
+```shell
 {
-
  "data": {
-
    "isSuccess": true,
-
    "status": "pending",
-
    "form": {
-
      "method": "POST",
-
      "url": "https://acs.anybank.com/",
-
      "fields": {
-
        "PaReq": "encrypted_data",
-
        "MD": "unique_id",
-
        "TermUrl": "https://payop.com/v1/url"
-
      }
-
    }
-
  },
 
  "status": 1
-
 }
 ```
 
@@ -138,7 +113,7 @@ GET https://api.payop.com/v1/checkout/check-invoice-status/{invoiceID}
 ** **
 
 
-### **2. createCheckoutTransaction.md**
+### **Create Checkout**
 
 
 #### **Purpose:**
@@ -162,7 +137,7 @@ GET https://api.payop.com/v1/checkout/check-invoice-status/{invoiceID}
 **Request:**
 
 
-```
+```shell
 POST https://api.payop.com/v1/checkout/create
 ```
 
@@ -170,8 +145,6 @@ POST https://api.payop.com/v1/checkout/create
 ** **
 
 **Key Parameters:**
-
-
 
 * **<code>invoiceIdentifier</code>: The invoice ID.**
 * **<code>customer</code>: Customer details (name, email, IP address).**
@@ -181,34 +154,22 @@ POST https://api.payop.com/v1/checkout/create
 **Response Example (Success):**
 
 
-```
+```shell
 {
-
  "data": {
-
    "isSuccess": true,
-
    "message": "",
-
    "txid": "transaction_unique_id"
-
  },
-
  "status": 1
-
 }
 ```
-
-
-** **
-
-** **
 
 
 ---
 
 
-### **3. getTransaction.md**
+### **Get Transaction**
 
 
 #### **Purpose:**
@@ -232,7 +193,7 @@ POST https://api.payop.com/v1/checkout/create
 **Request:**
 
 
-```
+```shell
 GET https://api.payop.com/v2/transactions/{transactionID}
 ```
 
@@ -241,9 +202,8 @@ GET https://api.payop.com/v2/transactions/{transactionID}
 ### **Headers:**
 
 
-```
+```shell
 Content-Type: application/
-
 Authorization: Bearer YOUR_JWT_TOKEN
 ```
 
@@ -251,53 +211,35 @@ Authorization: Bearer YOUR_JWT_TOKEN
 **Response Example (Success):**
 
 
-```
+```shell
 {
-
  "data": {
-
    "identifier": "transaction_id",
-
    "amount": 100,
-
    "currency": "USD",
-
    "state": 5,
-
    "error": "error message",
-
    "createdAt": 1567402240,
-
    "orderId": "134666",
-
    "resultUrl": "https://your.site/result"
-
  }
 
 }
 ```
 
-
-** **
-
-
 ---
 
 
-### **4. ipn.md**
+### **IPN**
 
 
 #### **Purpose:**
-
-
 
 * **Describes how Instant Payment Notification (IPN) works.**
 * **IPNs inform merchants in real-time about payment updates.**
 
 
 #### **How It Works:**
-
-
 
 * **Once a transaction is completed, Payop sends an IPN request to the merchant’s pre-configured IPN URL.**
 * **Merchants should validate the IPN and update their order statuses accordingly.**
@@ -309,37 +251,24 @@ Authorization: Bearer YOUR_JWT_TOKEN
 **IPN Request Format:**
 
 
-```
+```shell
 {
-
  "invoice": {
-
    "id": "invoice_id",
-
    "status": 1,
-
    "txid": "transaction_id"
 
  },
 
  "transaction": {
-
    "id": "transaction_id",
-
    "state": 2,
-
    "order": { "id": "ORDER_ID" },
-
    "error": {
-
      "message": "Error message",
-
      "code": ""
-
    }
-
  }
-
 }
 ```
 
@@ -357,31 +286,26 @@ Authorization: Bearer YOUR_JWT_TOKEN
 ---
 
 
-### **5. voidTransaction.md**
+### **Void Transaction**
 
 
 #### **Purpose:**
 
-
-
 * **Cancels (voids) a transaction  in status “Pending”.**
 * **Used when the merchant wants to cancel an ongoing transaction and initiate a new one with a fresh invoice**
-
 
 #### **How It Works:**
 
 
-
 * **A <code>POST</code> request is sent with the invoice identifier.**
 * **The response confirms whether the void was successful.**
-
 
 #### **Example Usage:**
 
 **Request:**
 
 
-```
+```shell
 POST https://api.payop.com/v1/checkout/void
 ```
 
@@ -395,20 +319,13 @@ POST https://api.payop.com/v1/checkout/void
 **Response Example (Success):**
 
 
-```
+```shell
 {
-
  "data": {
-
    "isSuccess": true,
-
    "message": "",
-
    "txid": "canceled_transaction_id"
-
  },
-
  "status": 1
-
 }
 ```
