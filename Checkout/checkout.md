@@ -27,7 +27,7 @@ Authorization: Bearer YOUR_JWT_TOKEN
 
 [![Watch the video "How to create a JWT token?](https://img.youtube.com/vi/Q7vlfEpJMRA/0.jpg)](https://www.youtube.com/watch?v=Q7vlfEpJMRA)
 
-<a href="https://www.youtube.com/watch?v=Q7vlfEpJMRA" target="_blank">
+<a href="https://www.youtube.com/watch?v=Q7vlfEpJMRA" target="_top">
   <img src="https://img.youtube.com/vi/Q7vlfEpJMRA/0.jpg" alt='Watch the video "How to create a JWT token?"' />
 </a>
 
