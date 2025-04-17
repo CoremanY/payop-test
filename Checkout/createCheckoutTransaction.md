@@ -23,7 +23,7 @@ Authorization: Bearer YOUR_JWT_TOKEN
 
 * <strong>Tokens can be generated in the Payop dashboard and should be securely stored.</strong> 
 
-**📺 Watch the video "How to create a JWT token":**  
+**📺 Watch the video "How to create a JWT token?":**  
 
 [![Watch the video "How to create a JWT token?](https://img.youtube.com/vi/Q7vlfEpJMRA/0.jpg)](https://www.youtube.com/watch?v=Q7vlfEpJMRA)
 
