@@ -14,7 +14,8 @@ The **Hosted Page Integration** is the **simplest** and **most convenient** meth
 
 ### **How It Works**
 
-**🔹1. Create an Invoice** – A request is sent to generate a payment invoice. `POST https://api.payop.com/v1/invoices/create` *[See the Invoice section for more details](../1.Invoice/invoice.md)* 
+**🔹1. Create an Invoice** – A request is sent to generate a payment invoice. `POST https://api.payop.com/v1/invoices/create`  
+*[See the Invoice section for more details](../1.Invoice/invoice.md)* 
 **🔹2. Redirect the Payer** – The payer is redirected to the **invoice preprocessing page**. (`https://checkout.payop.com/{{locale}}/payment/invoice-preprocessing/{{invoiceId}}`)  
 **🔹3. Payer Enters Required Data:** On the Payop checkout page, the payer fills in necessary details (e.g., name, date of birth, email, etc.).  
 **🔹4. Automatic Processing** – Payop determines the next steps, such as selecting the appropriate payment method or requiring additional details.  
@@ -68,7 +69,7 @@ This method is ideal for businesses with development resources who want to embed
 
 Use your **public key and signature** to create invoice via the API:
 
-*You can generate signature using the script ([See signature generation instruction section for more details](signatureGenerator.md))*
+*You can generate signature using the script ( [See signature generation instruction section for more details](signatureGenerator.md) )*
 
 ```shell
 curl -X POST "https://api.payop.com/v1/invoices/create" \
