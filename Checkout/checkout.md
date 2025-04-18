@@ -7,7 +7,7 @@
 
 #### **Purpose:**
 
-* **This document explains how authentication works in the Payop API using JWT-based Bearer Authentication.**
+* **This section explains how authentication works in the Payop API using JWT-based Bearer Authentication.**
 * **Authentication is required for accessing protected API endpoints.**
 
 #### **How It Works:**
@@ -32,10 +32,53 @@ Authorization: Bearer YOUR_JWT_TOKEN
 
 ---
 
+<table>
+  <tr>
+    <td><h5 style="text-align: center"><strong>#</strong></h5></td>
+    <td><h5 style="text-align: center"><strong>Endpoint</strong></h5></td>
+    <td><h5 style="text-align: center"><strong>Method</strong></h5></td>
+    <td><h5 style="text-align: center"><strong>Auth Required</strong></h5></td>
+    <td><h5 style="text-align: center"><strong>Purpose</strong></h5></td>
+  </tr>
+  <tr>
+    <td><strong>1</strong></td>
+    <td><strong>/v1/checkout/create</strong></td>
+    <td><strong>POST</strong></td>
+    <td><strong>✅ Yes</strong></td>
+    <td><strong>Create a new checkout transaction using invoice details.</strong></td>
+  </tr>
+  <tr>
+    <td><strong>2</strong></td>
+    <td><strong>/v1/checkout/check-invoice-status/{invoiceID}</strong></td>
+    <td><strong>GET</strong></td>
+    <td><strong>✅ Yes</strong></td>
+    <td><strong>Check the current status of a specific invoice.</strong></td>
+  </tr>
+  <tr>
+    <td><strong>3</strong></td>
+    <td><strong>/v2/transactions/{transactionID}</strong></td>
+    <td><strong>GET</strong></td>
+    <td><strong>✅ Yes</strong></td>
+    <td><strong>Retrieve detailed information about a specific transaction.</strong></td>
+  </tr>
+  <tr>
+    <td><strong>4</strong></td>
+    <td><strong>{Checkout IPN URL configured in project settings}</strong></td>
+    <td><strong>POST</strong></td>
+    <td><strong>❌ No</strong></td>
+    <td><strong>Receive IPNs for transaction status updates (e.g., success, fail).</strong></td>
+  </tr>
+  <tr>
+    <td><strong>5</strong></td>
+    <td><strong>/v1/checkout/void</strong></td>
+    <td><strong>POST</strong></td>
+    <td><strong>✅ Yes</strong></td>
+    <td><strong>Void (cancel) a previously created but not completed checkout transaction.</strong></td>
+  </tr>
+</table>
 
-## **Checkout Section**
 
-### **Create Checkout**
+### **1. Create Checkout**
 
 
 #### **Purpose:**
@@ -84,7 +127,7 @@ curl -X POST \
 **Response Example (Success):**
 
 
-```shell
+```json
 {
  "data": {
    "isSuccess": true,
@@ -99,7 +142,7 @@ curl -X POST \
 ---
 
 
-### **Check invoice status**
+### **2. Check invoice status**
 
 
 #### **Purpose:**
@@ -134,7 +177,7 @@ GET https://api.payop.com/v1/checkout/check-invoice-status/{invoiceID}
 **Pending (Waiting for further action):**
 
 
-```shell
+```json
 {
  "data": {
    "isSuccess": true,
@@ -151,7 +194,7 @@ GET https://api.payop.com/v1/checkout/check-invoice-status/{invoiceID}
 **Redirect  (POST request required):**
 
 
-```shell
+```json
 {
  "data": {
    "isSuccess": true,
@@ -174,7 +217,7 @@ GET https://api.payop.com/v1/checkout/check-invoice-status/{invoiceID}
 
 ** **
 
-### **Get Transaction**
+### **3. Get Transaction**
 
 
 #### **Purpose:**
@@ -216,7 +259,7 @@ Authorization: Bearer YOUR_JWT_TOKEN
 **Response Example (Success):**
 
 
-```shell
+```json
 {
  "data": {
    "identifier": "transaction_id",
@@ -232,10 +275,23 @@ Authorization: Bearer YOUR_JWT_TOKEN
 }
 ```
 
+### **Transaction states**
+
+Status | Type         | Description                                                                                                              |
+-------|--------------|--------------------------------------------------------------------------------------------------------------------------|
+1      | new          | New transaction, no actions were taken                                                                                   |
+2      | accepted     | Transaction was paid successfully                                                                                        |
+4      | pending      | Transaction pending, has not yet been paid and is expected to be paid                                                    |
+3, 5  | failed       | Transaction failed, has not been paid for technical or financial reasons                                                 |
+9     | pre-approved | Transaction has been submitted through the bank, however, we are still awaiting the funds to be credited to our account* |
+15    | timeout      | Transaction timed out due to lack of final confirmation from the payer after initiation                                  |
+
+> **🧾Please Note:** *"Pre-approved" status may change to "Accepted" status or "Failed" status, in case funds are not received or the payer has canceled the transaction. While it is quite a rare scenario, in some cases it is still possible to cancel the payment on the payer's side, **please use "Pre-approved" for goods/service delivery at your own risk. Only the final "Accepted" status is guaranteed**
+
 ---
 
 
-### **IPN**
+### **4. IPN**
 
 
 #### **Purpose:**
