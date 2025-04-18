@@ -167,7 +167,7 @@ identifier: 81962ed0-a65c-4d1a-851b-b3dbf9750399
 
 ### **Error Response Examples:**
 
-
+![response](https://img.shields.io/badge/fail-response-red?style=for-the-badge)
 ```json
 {   "message": "Refund amount is bigger than transaction amount" }
 ```
@@ -175,7 +175,7 @@ identifier: 81962ed0-a65c-4d1a-851b-b3dbf9750399
 
 ** **
 
-
+![response](https://img.shields.io/badge/fail-response-red?style=for-the-badge)
 ```json
 {   "message": "Transaction not found" }
 ```
@@ -183,7 +183,7 @@ identifier: 81962ed0-a65c-4d1a-851b-b3dbf9750399
 
 ** **
 
-
+![response](https://img.shields.io/badge/fail-response-red?style=for-the-badge)
 ```json
 {   "message": "Full authentication is required to access this resource." }
 ```

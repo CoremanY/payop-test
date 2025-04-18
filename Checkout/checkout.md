@@ -139,6 +139,7 @@ https://api.payop.com/v1/checkout/check-invoice-status/{invoiceID}
 
 **Pending (Waiting for further action):**
 
+![response](https://img.shields.io/badge/success-response-green?style=for-the-badge)
 
 ```json
 {
