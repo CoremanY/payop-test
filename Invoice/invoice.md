@@ -5,9 +5,9 @@
 
 | # | Endpoint                                                                 | Method | Purpose                                                |
 |---|--------------------------------------------------------------------------|--------|--------------------------------------------------------|
-| 1 | [`/v1/invoices/create`](#1-create-invoice)                                                   | ![POST](https://img.shields.io/badge/-POST-green?style=for-the-badge) | Create a new invoice.                                 |
-| 2 | [`/v1/invoices/{invoiceID}`](#2-get-invoice-info)                                             | ![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)  | Fetch detailed info about a specific invoice.         |
-| 3 | [`/v1/instrument-settings/payment-methods/available-for-application/{ID}`](#3-get-available-payment-methods) | ![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)  | Get available payment methods for a specific project. |
+| 1 | [`/v1/invoices/create`](#1-create-invoice)                                                   | ![POST](https://img.shields.io/badge/-POST-yellow?style=for-the-badge) | Create a new invoice.                                 |
+| 2 | [`/v1/invoices/{invoiceID}`](#2-get-invoice-info)                                             | ![GET](https://img.shields.io/badge/-GET-darkgreen?style=for-the-badge)  | Fetch detailed info about a specific invoice.         |
+| 3 | [`/v1/instrument-settings/payment-methods/available-for-application/{ID}`](#3-get-available-payment-methods) | ![GET](https://img.shields.io/badge/-GET-darkgreen?style=for-the-badge)  | Get available payment methods for a specific project. |
 
 
 
@@ -16,7 +16,7 @@
 
 #### **Endpoint:**
 
-![POST](https://img.shields.io/badge/-POST-green?style=for-the-badge)
+![POST](https://img.shields.io/badge/-POST-yellow?style=for-the-badge)
 
 ```shell
 
@@ -216,7 +216,7 @@ curl -X POST "https://api.payop.com/v1/invoices/create" \
 
 #### **Endpoint:**
 
-![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)
+![GET](https://img.shields.io/badge/-GET-darkgreen?style=for-the-badge)
 
 ```shell
 https://api.payop.com/v1/invoices/{invoiceID}
@@ -363,7 +363,7 @@ curl -X GET "https://api.payop.com/v1/invoices/{invoiceID}" \
 
 #### **Endpoint:**
 
-![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)
+![GET](https://img.shields.io/badge/-GET-darkgreen?style=for-the-badge)
 
 ```shell
 https://api.payop.com/v1/instrument-settings/payment-methods/available-for-application/{ID}

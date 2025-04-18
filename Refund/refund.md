@@ -9,10 +9,10 @@
 
 | # | Endpoint                                                                 | Method                                                                 | Purpose                                                                                      |
 |---|--------------------------------------------------------------------------|------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
-| 1 | [`/v1/refunds/create`](#1-create-refund)                      | ![POST](https://img.shields.io/badge/-POST-green?style=for-the-badge) | Initiate a refund request for a completed transaction (full or partial).                    |
-| 2 | [`/v1/refunds/user-refunds?query[identifier]={refundId}`](#2-get-refund-list) | ![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)   | Retrieve detailed information about a specific refund using its identifier.                |
-| 3 | [`/v1/refunds/user-refunds`](#3-get-refund-list)                      | ![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)    | Fetch the list of all refunds initiated by the merchant.                                    |
-| 4 | [`{Refund IPN URL from your project settings}`](#4-refund-ipn-instant-payment-notification) | ![POST](https://img.shields.io/badge/-POST-green?style=for-the-badge) | Receive an Instant Payment Notification (IPN) when a refund is accepted or rejected.       |
+| 1 | [`/v1/refunds/create`](#1-create-refund)                      | ![POST](https://img.shields.io/badge/-POST-yellow?style=for-the-badge) | Initiate a refund request for a completed transaction (full or partial).                    |
+| 2 | [`/v1/refunds/user-refunds?query[identifier]={refundId}`](#2-get-refund-list) | ![GET](https://img.shields.io/badge/-GET-darkgreen?style=for-the-badge)   | Retrieve detailed information about a specific refund using its identifier.                |
+| 3 | [`/v1/refunds/user-refunds`](#3-get-refund-list)                      | ![GET](https://img.shields.io/badge/-GET-darkgreen?style=for-the-badge)    | Fetch the list of all refunds initiated by the merchant.                                    |
+| 4 | [`{Refund IPN URL from your project settings}`](#4-refund-ipn-instant-payment-notification) | ![POST](https://img.shields.io/badge/-POST-yellow?style=for-the-badge) | Receive an Instant Payment Notification (IPN) when a refund is accepted or rejected.       |
 
 
 
@@ -24,7 +24,7 @@
 
 ### **Endpoint:**
 
-![POST](https://img.shields.io/badge/-POST-green?style=for-the-badge)
+![POST](https://img.shields.io/badge/-POST-yellow?style=for-the-badge)
 
 ```shell
 https://api.payop.com/v1/refunds/create
@@ -202,7 +202,7 @@ identifier: 81962ed0-a65c-4d1a-851b-b3dbf9750399
 
 ### **Endpoint:**
 
-![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)
+![GET](https://img.shields.io/badge/-GET-darkgreen?style=for-the-badge)
 
 ```shell
 https://api.payop.com/v1/refunds/user-refunds?query[identifier]={payopRefundId}
@@ -277,7 +277,7 @@ curl -X GET "https://api.payop.com/v1/refunds/user-refunds?query[identifier]=7ed
 
 ### **Endpoint:**
 
-![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)
+![GET](https://img.shields.io/badge/-GET-darkgreen?style=for-the-badge)
 
 
 ```shell

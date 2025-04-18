@@ -7,11 +7,11 @@
 
 | # | Endpoint                                                                                       | Method                                                                 | Auth Required | Purpose                                                                                          |
 |---|------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|----------------|--------------------------------------------------------------------------------------------------|
-| 1 | [`/v1/withdrawals/user-withdrawals?query[identifier]={withdrawalId}`](#1-get-withdrawal-details) | ![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)    | ✅ Yes         | Get detailed information about a specific withdrawal by ID.                                     |
-| 2 | [`/v1/withdrawals/user-withdrawals`](#2-get-withdrawals-list)                                  | ![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)    | ✅ Yes         | Retrieve a list of all withdrawals initiated by the merchant.                                   |
-| 3 | [`/v1/withdrawals/create-mass`](#3-create-mass-withdrawal)                                     | ![POST](https://img.shields.io/badge/-POST-green?style=for-the-badge) | ✅ Yes         | Submit one or more withdrawal requests as a batch (mass withdrawal).                            |
-| 4 | [`/v1/instrument-settings/payment-methods/available-withdrawal-for-user`](#4-get-available-withdrawal-methods) | ![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)    | ✅ Yes         | Get all available withdrawal payment methods for the authenticated user.                        |
-| 5 | [`{Withdraw IPN URL configured in project settings}`](#5-ipn--withdrawal-notifications)                        | ![POST](https://img.shields.io/badge/-POST-green?style=for-the-badge) | ❌ No          | Receive asynchronous Instant Payment Notifications (IPNs) for status updates on withdrawals.    |
+| 1 | [`/v1/withdrawals/user-withdrawals?query[identifier]={withdrawalId}`](#1-get-withdrawal-details) | ![GET](https://img.shields.io/badge/-GET-darkgreen?style=for-the-badge)    | ✅ Yes         | Get detailed information about a specific withdrawal by ID.                                     |
+| 2 | [`/v1/withdrawals/user-withdrawals`](#2-get-withdrawals-list)                                  | ![GET](https://img.shields.io/badge/-GET-darkgreen?style=for-the-badge)    | ✅ Yes         | Retrieve a list of all withdrawals initiated by the merchant.                                   |
+| 3 | [`/v1/withdrawals/create-mass`](#3-create-mass-withdrawal)                                     | ![POST](https://img.shields.io/badge/-POST-yellow?style=for-the-badge) | ✅ Yes         | Submit one or more withdrawal requests as a batch (mass withdrawal).                            |
+| 4 | [`/v1/instrument-settings/payment-methods/available-withdrawal-for-user`](#4-get-available-withdrawal-methods) | ![GET](https://img.shields.io/badge/-GET-darkgreen?style=for-the-badge)    | ✅ Yes         | Get all available withdrawal payment methods for the authenticated user.                        |
+| 5 | [`{Withdraw IPN URL configured in project settings}`](#5-ipn--withdrawal-notifications)                        | ![POST](https://img.shields.io/badge/-POST-yellow?style=for-the-badge) | ❌ No          | Receive asynchronous Instant Payment Notifications (IPNs) for status updates on withdrawals.    |
 
 
 
@@ -26,7 +26,7 @@
 
 ### **Endpoint:**
 
-![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)
+![GET](https://img.shields.io/badge/-GET-darkgreen?style=for-the-badge)
 
 ```shell
 https://api.payop.com/v1/withdrawals/user-withdrawals?query[identifier]={withdrawalId}
@@ -105,7 +105,7 @@ curl -X GET "https://api.payop.com/v1/withdrawals/user-withdrawals?query[identif
 
 ### **Endpoint:**
 
-![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)
+![GET](https://img.shields.io/badge/-GET-darkgreen?style=for-the-badge)
 
 ```shell
  https://api.payop.com/v1/withdrawals/user-withdrawals
@@ -134,7 +134,7 @@ curl -X GET "https://api.payop.com/v1/withdrawals/user-withdrawals" \
 
 ### **Endpoint:**
 
-![POST](https://img.shields.io/badge/-POST-green?style=for-the-badge)
+![POST](https://img.shields.io/badge/-POST-yellow?style=for-the-badge)
 
 ```shell
 https://api.payop.com/v1/withdrawals/create-mass
@@ -246,7 +246,7 @@ curl -X POST "https://api.payop.com/v1/withdrawals/create-mass" \
 
 ### **Endpoint:**
 
-![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)
+![GET](https://img.shields.io/badge/-GET-darkgreen?style=for-the-badge)
 
 ```shell
  https://api.payop.com/v1/instrument-settings/payment-methods/available-withdrawal-for-user
