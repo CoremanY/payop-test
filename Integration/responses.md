@@ -34,7 +34,7 @@
 ** **
 
 
-![201](https://img.shields.io/badge/200-created-lightgreen?style=for-the-badge)
+![201](https://img.shields.io/badge/201-created-lightgreen?style=for-the-badge)
 
 > **The resource was successfully created (e.g., token, invoice, transaction).**
 
