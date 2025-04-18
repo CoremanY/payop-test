@@ -162,11 +162,11 @@ curl -X POST \
 
 #### **Example Usage:**
 
-**Request:**
+**Request:**![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)
 
 
 ```shell
-![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge) https://api.payop.com/v1/checkout/check-invoice-status/{invoiceID}
+https://api.payop.com/v1/checkout/check-invoice-status/{invoiceID}
 ```
 
 
