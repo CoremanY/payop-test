@@ -5,7 +5,7 @@
 
 | # | Endpoint                                                                 | Method | Purpose                                                |
 |---|--------------------------------------------------------------------------|--------|--------------------------------------------------------|
-| 1 | `/v1/invoices/create`                                                   | ![POST](https://img.shields.io/badge/-POST-green?style=for-the-badge) | Create a new invoice.                                 |
+| 1 | [`/v1/invoices/create`](#1-create-invoice)                                                   | ![POST](https://img.shields.io/badge/-POST-green?style=for-the-badge) | Create a new invoice.                                 |
 | 2 | `/v1/invoices/{invoiceID}`                                              | ![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)  | Fetch detailed info about a specific invoice.         |
 | 3 | `/v1/instrument-settings/payment-methods/available-for-application/{ID}` | ![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)  | Get available payment methods for a specific project. |
 
