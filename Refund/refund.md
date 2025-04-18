@@ -158,7 +158,7 @@ curl -X POST "https://api.payop.com/v1/refunds/create" \
 **📌 The refund identifier is returned in the response header:**
 
 
-```json
+```shell
 identifier: 81962ed0-a65c-4d1a-851b-b3dbf9750399
 ```
 
