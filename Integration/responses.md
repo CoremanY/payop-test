@@ -112,7 +112,7 @@
 ** **
 
 
-![403](https://img.shields.io/badge/401-forbidden-red?style=for-the-badge)
+![403](https://img.shields.io/badge/403-forbidden-red?style=for-the-badge)
 
 > **The authenticated user does not have permission to access the requested resource.**
 
