@@ -80,7 +80,7 @@ curl -X POST \
 
 ** **
 
-**Key Parameters:**
+![Key Parameters](https://img.shields.io/badge/key_parameters-lightgray?style=for-the-badge)
 
 * **<code>invoiceIdentifier</code>: The invoice ID.**
 * **<code>customer</code>: Customer details (name, email, IP address).**

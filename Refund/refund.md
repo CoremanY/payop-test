@@ -42,8 +42,8 @@ Authorization: Bearer YOUR_JWT_TOKEN
 
 
 
-### **Request Parameters:**
 
+![Key Parameters](https://img.shields.io/badge/key_parameters-lightgray?style=for-the-badge)
 
 <table>
   <tr>
@@ -443,8 +443,7 @@ curl -X GET "https://api.payop.com/v1/refunds/user-refunds" \
 ** **
 
 
-### **IPN Parameters:**
-
+![Key Parameters](https://img.shields.io/badge/key_parameters-lightgray?style=for-the-badge)
 
 <table>
   <tr>

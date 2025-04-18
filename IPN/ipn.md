@@ -250,6 +250,7 @@ Content-Type: application/json
 
 ### **Payload Parameters for Refund**
 
+![Key Parameters](https://img.shields.io/badge/key_parameters-lightgray?style=for-the-badge)
 
 <table>
   <tr>
@@ -400,7 +401,9 @@ Content-Type: application/json
 ** **
 
 
-### **Payload Parameters for Withdrawal**
+### **Payload Parameters for Withdrawal** 
+
+![Key Parameters](https://img.shields.io/badge/key_parameters-lightgray?style=for-the-badge)
 
 <table>
   <tr>
