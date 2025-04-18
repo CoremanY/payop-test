@@ -383,20 +383,6 @@ Content-Type: application/json
 
 ### **Payload Parameters for Withdrawal**
 
-
-<table>
-  <tr>
-   <td>Field
-   </td>
-   <td>Type
-   </td>
-   <td>Description
-   </td>
-  </tr>
-</table>
-
-
-
 <table>
   <tr>
    <td>Field
