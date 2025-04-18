@@ -12,43 +12,43 @@ Each request to Payop API should have a `Content-Type` HTTPS header with `applic
 ### 0. Integration
 
 * Integration via API 
-  * [API Integration Types](Integration/integrationApiTypes.md)  
+  * [API Integration Types](0.Integration/integrationApiTypes.md)  
    * Pre-setup integration plugins  
       * [Woocommerce](https://github.com/Payop/woocommerce-plugin)  
           
-* [Response examples](Integration/responses.md)  
-* [Signature generation](Integration/signatureGenerator.md)  
+* [Response examples](0.Integration/responses.md)  
+* [Signature generation](0.Integration/signatureGenerator.md)  
 
 ### 1. Invoice
 
 An invoice is the core element of any payment. Every payment is made against an invoice, and checkout transactions can only be initiated for existing invoices.
 
-* [Invoice](Invoice/invoice.md)
+* [Invoice](1.Invoice/invoice.md)
 
    
 ### 2. Checkout    
 
  Handling Payments Through the Checkout Flow
 
- * [Checkout](Checkout/checkout.md)
+ * [Checkout](2.Checkout/checkout.md)
 
 
 ### 3. Withdrawal
 
 Steps to prepare and request a withdrawal.
 
-* [Encrypt withdrawal data](Withdrawal/withdrawalEncrypt.md)
-* [Send withdrawal](Withdrawal/withdrawal.md)
+* [Encrypt withdrawal data](3.Withdrawal/withdrawalEncrypt.md)
+* [Send withdrawal](3.Withdrawal/withdrawal.md)
    
 ### 4. Refund
     
 How to process and handle refunds.
 
-* [Refund](Refund/refund.md)
+* [Refund](4.Refund/refund.md)
 
 
 ### 5. IPN (Instant Payment Notification)
 
 Learn to receive and handle Instant Payment Notifications. 
 
-* [IPN](IPN/ipn.md)
+* [IPN](5.IPN/ipn.md)
