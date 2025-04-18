@@ -20,7 +20,7 @@ The **Hosted Page Integration** is the **simplest** and **most convenient** meth
 **🔹4. Automatic Processing** – Payop determines the next steps, such as selecting the appropriate payment method or requiring additional details.  
 **🔹5. Payment Confirmation** – If the payment is successful, the payer is redirected to the `resultUrl`. If the payment fails, the payer is redirected to the `failPath`.  
 **🔹6. Receive IPN (Instant Payment Notification)** If IPNs are configured, Payop will automatically notify your server when the transaction status changes. This ensures your backend is updated even if the user does not return to your site.   \
- *(See[ Checkout → IPN](LINK)*
+ *[See Checkout->IPN for more details](../Checkout/Checkout.md#ipn)*
 
 
 ### **Checkout Flow**
