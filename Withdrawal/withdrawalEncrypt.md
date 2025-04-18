@@ -126,25 +126,15 @@ curl -X POST https://api.payop.com/v1/withdrawals/create-mass \
 
 
 <details>
-  <summary>Guide: Run PHP Script to Encrypt Withdrawal Payload Using Docker</summary>
+  <summary>Guide: Run PHP Script to Encrypt Withdrawal Payload Using Docker</summary>  
+ 
 ### **✅ Prerequisites**
 
+* Make sure **Docker** is installed on your machine.  
 
-
-* Make sure **Docker** is installed on your machine. \
-You can download Docker Desktop here: \
-👉[ ](https://www.docker.com/products/docker-desktop)
-
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image1.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image1.png "image_tooltip")
-[Docker Desktop: The #1 Containerization Tool for Developers | Docker](https://www.docker.com/products/docker-desktop)
-
+👉[You can download Docker Desktop here:](https://www.docker.com/products/docker-desktop)
 
 ### **Step 1: Prepare Your Project Folder**
-
-
 
 1. Create a folder on your local machine:
 
