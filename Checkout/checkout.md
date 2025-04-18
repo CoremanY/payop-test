@@ -37,8 +37,8 @@ Authorization: Bearer YOUR_JWT_TOKEN
 | 1 | [`/v1/checkout/create`](#1-create-checkout)                                  | ![POST](https://img.shields.io/badge/-POST-green?style=for-the-badge) | ✅ Yes         | Create a new checkout transaction using invoice details.               |
 | 2 | [`/v1/checkout/check-invoice-status/{invoiceID}`](#2-check-invoice-status)  | ![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)    | ✅ Yes         | Check the current status of a specific invoice.                        |
 | 3 | [`/v2/transactions/{transactionID}`](#3-get-transaction-details)            | ![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)    | ✅ Yes         | Retrieve detailed information about a specific transaction.           |
-| 4 | [`{Checkout IPN URL configured in project settings}`](#4-checkout-ipn)      | ![POST](https://img.shields.io/badge/-POST-green?style=for-the-badge) | ❌ No          | Receive IPNs for transaction status updates (e.g., success, fail).     |
-| 5 | [`/v1/checkout/void`](#5-void-checkout)                                      | ![POST](https://img.shields.io/badge/-POST-green?style=for-the-badge) | ❌ No          | Void (cancel) a previously created but not completed checkout transaction. |
+| 4 | [`{Checkout IPN URL configured in project settings}`](#4-ipn)      | ![POST](https://img.shields.io/badge/-POST-green?style=for-the-badge) | ❌ No          | Receive IPNs for transaction status updates (e.g., success, fail).     |
+| 5 | [`/v1/checkout/void`](#5-void-transaction)                                      | ![POST](https://img.shields.io/badge/-POST-green?style=for-the-badge) | ❌ No          | Void (cancel) a previously created but not completed checkout transaction. |
 
 
 ### **1. Create Checkout**
@@ -182,7 +182,7 @@ https://api.payop.com/v1/checkout/check-invoice-status/{invoiceID}
 
 ** **
 
-### **3. Get Transaction**
+### **3. Get Transaction Details**
 
 
 #### **Purpose:**
@@ -312,7 +312,7 @@ Status | Type         | Description                                             
 ---
 
 
-### **Void Transaction**
+### **5. Void Transaction**
 
 
 #### **Purpose:**
