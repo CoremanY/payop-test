@@ -93,9 +93,6 @@ echo "Encrypted payload:\n" . $base64Payload;
 ```
 
 
-** **
-
-
 > ⚠️ PHP 7.2+ includes Sodium natively. No extra dependencies needed.
 
 
@@ -126,3 +123,123 @@ curl -X POST https://api.payop.com/v1/withdrawals/create-mass \
 ```
 {"data":"YwukuaG2G0whJfHWpdIXrMay76o1\/VuSmUr8cpSUGCDhqEnry4FsFOTJpmccoQ6w\/Z2VmQKgkvJ\/Hz7v8VrvYSfoTsnX4cKvoUasgC2xOwgPdYzcmx5zIq4SlEHx418OwM\/oqAHb5cEO\/IFwBlMHzL1IAc7yFCwOjSUMg+8SNlawtTLGRNtIb8V6\/gqZRZXoyQHuXoclRE1tR\/2GZjjiD6aEM0JQPNg3NssPxuQuRiRAgzhMPrnCS53FQIjZrR9sVDcb4iJxhpXORHpSZ8vLgT9Ya6RSdsNUWrpaTUBr1MACULgN8Oib1G8U7PK3YoNb8APfibnAklTLuo7HDkvFB7FQ+xIOvYfg4LgK5vbQIRensLzGVz8ktIOyLpwOw2wBgf6HrUI2HiooCg+o9hR0qqRoZCSi\/psRgQU5Ry3fSSWsw+Q39pNCm9sbQvYQZ6akti7KrcDYdLAjKFKu3DdB2lX38shjErM\/QMxjBegeOsl50DouknCq1BImSCR5HYJhJgRP1sZo8S5RfiBjSzXbgcddaSG6kIkRirCt"}
 ```
+
+
+<details>
+  <summary>Guide: Run PHP Script to Encrypt Withdrawal Payload Using Docker</summary>
+### **✅ Prerequisites**
+
+
+
+* Make sure **Docker** is installed on your machine. \
+You can download Docker Desktop here: \
+👉[ ](https://www.docker.com/products/docker-desktop)
+
+<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image1.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image1.png "image_tooltip")
+[Docker Desktop: The #1 Containerization Tool for Developers | Docker](https://www.docker.com/products/docker-desktop)
+
+
+### **Step 1: Prepare Your Project Folder**
+
+
+
+1. Create a folder on your local machine:
+
+
+```shell
+mkdir payop-withdrawal-encrypt 
+cd payop-withdrawal-encrypt
+
+```
+
+
+
+1. Create the `encrypt.php` script:
+
+
+```shell
+touch encrypt.php
+```
+
+
+
+1. Paste the following example script into `encrypt.php`:
+
+
+```shell
+<?php
+$certFilePath = __DIR__ . '/c9f5753e-587f-41fa-9b2a-b7ab998d1bcc'; // Ensure your cert is here
+$certificate = file_get_contents($certFilePath);
+$data = [
+   [
+       'method' => 14,
+       'type' => 1,
+       'amount' => 1000,
+       'currency' => 'EUR',
+       'additionalData' => [
+           'direction' => 'Test payout',
+           'email' => 'recipient@example.com'
+       ]
+   ]
+];
+$encryptedPayload = sodium_crypto_box_seal(json_encode($data), $certificate);
+$base64Payload = base64_encode($encryptedPayload);
+echo "Encrypted Base64 Payload:\n\n" . $base64Payload . PHP_EOL;
+```
+
+
+
+1. Add your `с9f5753e-587f-41fa-9b2a-b7ab998d1bcc` certificate file to the same folder.
+
+You should now have:
+
+
+```shell
+payop-withdrawal-encrypt/
+├── encrypt.php
+└── с9f5753e-587f-41fa-9b2a-b7ab998d1bcc
+```
+
+
+
+### **Step 2: Run Docker PHP Container**
+
+Use this one-line Docker command to run your script inside a PHP container with Sodium installed:
+
+
+```shell
+docker run --rm -v "$PWD":/app -w /app php:8.2-cli php encrypt.php
+```
+
+
+If you are using **Windows CMD**, replace `$PWD` with `%cd%`:
+
+
+```shell
+docker run --rm -v %cd%:/app -w /app php:8.2-cli php encrypt.php
+```
+
+
+
+### **🧾 Expected Output**
+
+You’ll get a response like this:
+
+
+```shell
+Encrypted Base64 Payload:  9kQ7v9nXLHjeOyIqi+hIJfEKuOCQZ2C5WWVcnmfPHUxh1EbK5g=
+```
+
+
+
+### **📌 Notes**
+
+
+
+* PHP 7.2+ is required because Sodium is built-in from PHP 7.2 and later.
+* If you want to run the script multiple times, just run the Docker command again.
+* You **don’t need to install PHP locally** — Docker handles everything inside the container.
+</details>
