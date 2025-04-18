@@ -7,7 +7,7 @@
 **Successful responses follow a consistent structure and return an HTTP status code of <code>200</code> or <code>201</code>. The response body always contains a <code>data</code> field with the relevant payload and a <code>status</code> key used internally by Payop.**
 
 
-### **200 OK**
+![200](https://img.shields.io/badge/200-ok-green?style=for-the-badge)
 
 > **The request was successfully processed.**
 
@@ -34,7 +34,8 @@
 ** **
 
 
-### **201 Created**
+![201](https://img.shields.io/badge/200-created-lightgreen?style=for-the-badge)
+
 > **The resource was successfully created (e.g., token, invoice, transaction).**
 
 
@@ -94,7 +95,7 @@
 **Error responses follow REST conventions and return standard HTTP status codes such as <code>401</code>, <code>403</code>, <code>404</code>, <code>422</code>, and <code>500</code>. The response body always includes a <code>message</code> field that describes the issue.**
 
 
-### **401 Unauthorized**
+![401](https://img.shields.io/badge/401-unauthorized-red?style=for-the-badge)
 
 
 > **Authentication token is missing, expired, or invalid.**
@@ -111,8 +112,7 @@
 ** **
 
 
-### **403 Forbidden**
-
+![403](https://img.shields.io/badge/401-forbidden-red?style=for-the-badge)
 
 > **The authenticated user does not have permission to access the requested resource.**
 
@@ -125,8 +125,7 @@
 ** **
 
 
-### **404 Not Found**
-
+![404](https://img.shields.io/badge/404-not_found-red?style=for-the-badge)
 
 > **The requested resource could not be found (e.g., invoice or transaction ID is incorrect).**
 
@@ -139,7 +138,7 @@
 ** **
 
 
-### **422 Unprocessable Entity**
+![422](https://img.shields.io/badge/401-unprocessable_entity-red?style=for-the-badge)
 
 
 >  **The request was understood, but it failed validation or a required feature is not enabled.**
@@ -173,8 +172,7 @@
 
 
 
-### **500 Internal Server Error**
-
+![500](https://img.shields.io/badge/500-internal_server_error-darkred?style=for-the-badge)
 
 > **A generic error occurred on the server side.**
 
@@ -192,53 +190,10 @@
 ### **📝 Handling Recommendations**
 
 
-<table>
-  <tr>
-   <td><strong>Code</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-   <td><strong>Recommendation</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>401</strong>
-   </td>
-   <td><strong>Unauthorized</strong>
-   </td>
-   <td><strong>Check Bearer token and retry</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>403</strong>
-   </td>
-   <td><strong>Forbidden</strong>
-   </td>
-   <td><strong>Verify API permissions or access scope</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>404</strong>
-   </td>
-   <td><strong>Not Found</strong>
-   </td>
-   <td><strong>Check if resource ID is correct</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>422</strong>
-   </td>
-   <td><strong>Validation or unsupported method</strong>
-   </td>
-   <td><strong>Validate input or enable missing method</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>500</strong>
-   </td>
-   <td><strong>Internal error</strong>
-   </td>
-   <td><strong>Retry or contact support if persistent</strong>
-   </td>
-  </tr>
-</table>
+| **Code** | **Description**                        | **Recommendation**                                    |
+|----------|----------------------------------------|-------------------------------------------------------|
+| ![401](https://img.shields.io/badge/401-red?style=for-the-badge)  | Unauthorized                           | Check Bearer token and retry                          |
+| ![403](https://img.shields.io/badge/403-red?style=for-the-badge)  | Forbidden                              | Verify API permissions or access scope                |
+| ![404](https://img.shields.io/badge/404-red?style=for-the-badge) | Not Found                              | Check if resource ID is correct                       |
+| ![422](https://img.shields.io/badge/422-red?style=for-the-badge) | Validation or unsupported method      | Validate input or enable missing method               |
+| ![500](https://img.shields.io/badge/500-darkred?style=for-the-badge)  | Internal error                         | Retry or contact support if persistent                |
