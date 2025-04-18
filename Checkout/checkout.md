@@ -312,7 +312,7 @@ Status | Type         | Description                                             
 **IPN Request Format:**
 
 
-```shell
+```json
 {
  "invoice": {
    "id": "invoice_id",
@@ -380,7 +380,7 @@ POST https://api.payop.com/v1/checkout/void
 **Response Example (Success):**
 
 
-```shell
+```json
 {
  "data": {
    "isSuccess": true,
