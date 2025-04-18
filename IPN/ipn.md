@@ -21,8 +21,13 @@
 
 
 
-* **Whitelist IPs for security: \
-<code>18.199.249.46</code>, <code>35.158.36.143</code>, <code>3.125.109.58</code>, <code>3.127.103.117</code></strong>
+* **Whitelist IPs for security**:
+```shell
+18.199.249.46,
+35.158.36.143,
+3.125.109.58,
+3.127.103.117
+```
 * <strong>Always return HTTP 200 after successful processing.</strong>
 * <strong>Log every IPN you receive.</strong>
 * <strong>Ignore duplicates with same data.</strong>
