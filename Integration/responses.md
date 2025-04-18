@@ -118,7 +118,9 @@
 
 
 ```json
-{   "message": "Access denied." }
+ {   
+  "message": "Access denied."
+ }
 ```
 
 
@@ -131,7 +133,9 @@
 
 
 ```json
-{   "message": "Invoice not found" }
+{   
+  "message": "Invoice not found" 
+}
 ```
 
 
@@ -148,7 +152,9 @@
 
 
 ```json
-{   "message": "Method must be enabled to use it" }
+ {   
+   "message": "Method must be enabled to use it"
+ }
 ```
 
 
@@ -178,8 +184,9 @@
 
 
 ```json
-
-{   "message": "Something went wrong, try again or contact support." }
+ {   
+"message": "Something went wrong, try again or contact support."
+ }
 
 ```
 
