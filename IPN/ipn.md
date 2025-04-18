@@ -54,7 +54,9 @@ A **Checkout IPN (Instant Payment Notification)** is a server-to-server message 
 ## **IPN Payload (Example)**
 
 
-```json
+```shell
+POST https://{your_withdrawal_ipn_url}
+Content-Type: application/json
 {
  "invoice": {
    "id": "d024f697-ba2d-456f-910e-4d7fdfd338dd",
