@@ -3,11 +3,11 @@
 ### **Summary of Invoice API Endpoints**
 
 
-| **Action**                         | **Method** | **Endpoint**                                                                 |
-|-----------------------------------|------------|------------------------------------------------------------------------------|
-| **Create Invoice**                | ![POST](https://img.shields.io/badge/-POST-green?style=for-the-badge)   | `/v1/invoices/create`                                                       |
-| **Get Invoice Info**              | ![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)   | `/v1/invoices/{invoiceID}`                                                  |
-| **Get Available Payment Methods** | ![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)   | `/v1/instrument-settings/payment-methods/available-for-application/{ID}`   |
+| # | Endpoint                                                                 | Method | Purpose                                                |
+|---|--------------------------------------------------------------------------|--------|--------------------------------------------------------|
+| 1 | `/v1/invoices/create`                                                   | ![POST](https://img.shields.io/badge/-POST-green?style=for-the-badge) | Create a new invoice.                                 |
+| 2 | `/v1/invoices/{invoiceID}`                                              | ![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)  | Fetch detailed info about a specific invoice.         |
+| 3 | `/v1/instrument-settings/payment-methods/available-for-application/{ID}` | `GET`  | Get available payment methods for a specific project. |
 
 
 
