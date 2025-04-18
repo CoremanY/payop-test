@@ -26,9 +26,10 @@
 
 ### **Endpoint:**
 
+![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)
 
 ```shell
-GET https://api.payop.com/v1/withdrawals/user-withdrawals?query[identifier]={withdrawalId}
+https://api.payop.com/v1/withdrawals/user-withdrawals?query[identifier]={withdrawalId}
 ```
 
 
@@ -104,9 +105,10 @@ curl -X GET "https://api.payop.com/v1/withdrawals/user-withdrawals?query[identif
 
 ### **Endpoint:**
 
+![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)
 
 ```shell
-GET https://api.payop.com/v1/withdrawals/user-withdrawals
+ https://api.payop.com/v1/withdrawals/user-withdrawals
 ```
 
 
@@ -243,9 +245,10 @@ curl -X POST "https://api.payop.com/v1/withdrawals/create-mass" \
 
 ### **Endpoint:**
 
+![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)
 
 ```shell
-GET https://api.payop.com/v1/instrument-settings/payment-methods/available-withdrawal-for-user
+ https://api.payop.com/v1/instrument-settings/payment-methods/available-withdrawal-for-user
 ```
 
 

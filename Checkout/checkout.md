@@ -203,11 +203,13 @@ https://api.payop.com/v1/checkout/check-invoice-status/{invoiceID}
 
 #### **Example Usage:**
 
-**Request:**
+**Request:**  
+
+![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)
 
 
 ```shell
-GET https://api.payop.com/v2/transactions/{transactionID}
+ https://api.payop.com/v2/transactions/{transactionID}
 ```
 
 

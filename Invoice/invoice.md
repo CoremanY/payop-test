@@ -215,9 +215,10 @@ curl -X POST "https://api.payop.com/v1/invoices/create" \
 
 #### **Endpoint:**
 
+![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)
 
 ```shell
-GET https://api.payop.com/v1/invoices/{invoiceID}
+https://api.payop.com/v1/invoices/{invoiceID}
 ```
 
 
@@ -361,9 +362,10 @@ curl -X GET "https://api.payop.com/v1/invoices/{invoiceID}" \
 
 #### **Endpoint:**
 
+![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)
 
 ```shell
-GET https://api.payop.com/v1/instrument-settings/payment-methods/available-for-application/{ID}
+https://api.payop.com/v1/instrument-settings/payment-methods/available-for-application/{ID}
 ```
 
 

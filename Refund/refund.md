@@ -272,9 +272,10 @@ identifier: 81962ed0-a65c-4d1a-851b-b3dbf9750399
 
 ### **Endpoint:**
 
+![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)
 
 ```shell
-GET https://api.payop.com/v1/refunds/user-refunds?query[identifier]={payopRefundId}
+https://api.payop.com/v1/refunds/user-refunds?query[identifier]={payopRefundId}
 ```
 
 
@@ -346,9 +347,11 @@ curl -X GET "https://api.payop.com/v1/refunds/user-refunds?query[identifier]=7ed
 
 ### **Endpoint:**
 
+![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)
+
 
 ```shell
-GET https://api.payop.com/v1/refunds/user-refunds
+https://api.payop.com/v1/refunds/user-refunds
 ```
 
 
