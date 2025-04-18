@@ -126,7 +126,7 @@ curl -X POST https://api.payop.com/v1/withdrawals/create-mass \
 
 
 <details>
-  <summary>Guide: Run PHP Script to Encrypt Withdrawal Payload Using Docker</summary>  
+   <summary> 👉 Guide: Run PHP Script to Encrypt Withdrawal Payload Using Docker</summary> 
  
 ### **✅ Prerequisites**
 
@@ -232,4 +232,112 @@ Encrypted Base64 Payload:  9kQ7v9nXLHjeOyIqi+hIJfEKuOCQZ2C5WWVcnmfPHUxh1EbK5g=
 * PHP 7.2+ is required because Sodium is built-in from PHP 7.2 and later.
 * If you want to run the script multiple times, just run the Docker command again.
 * You **don’t need to install PHP locally** — Docker handles everything inside the container.
+</details>
+
+
+<details>
+  <summary> 👉 Guide: Run Python Encryption Script for Payop Withdrawal Using Docker</summary>  
+
+ ### **✅ Prerequisites**
+
+
+👉[**Docker** must be installed](https://www.docker.com/products/docker-desktop)
+
+
+### **Step 1: Prepare the Project Folder**
+
+
+
+1. Create a folder and enter it:
+
+
+```shell
+mkdir payop-python-encrypt 
+cd payop-python-encrypt
+```
+
+
+
+1. Create the encryption script:
+
+
+```shell
+touch encrypt.py
+```
+
+
+
+1. Paste the following code into `encrypt.py`:
+
+
+```shell
+# encrypt.py
+import libnacl
+import base64
+# Withdrawal data payload
+message = '[{"method": 7, "amount": 0.2, "currency": "USD", "type": "1", "additionalData": {"walletNumber": "41001560683733", "direction": "Test payout"}},{"method": 7, "amount": 0.2, "currency": "USD", "type": "1", "additionalData": {"walletNumber": "51001560683733", "direction": "Test payout 2"}}]'
+# Your certificate (Base64-encoded x25519 public key)
+publicKey = 'ZyC4u8gs6ivyu3FxPUuIJJqq560Xt5pGdnBgI8S11nk='
+# Encrypt and encode
+box = libnacl.crypto_box_seal(message.encode(), base64.b64decode(publicKey))
+print("\nEncrypted Base64 Payload:\n")
+print(base64.b64encode(box).decode())
+```
+
+
+ 
+
+
+### **Step 2: Create a Dockerfile**
+
+
+```shell
+touch Dockerfile
+```
+
+
+Paste this into the `Dockerfile`:
+
+
+```shell
+FROM python:3.10-slim
+RUN pip install libnacl
+WORKDIR /app
+COPY encrypt.py .
+CMD ["python", "encrypt.py"]
+```
+
+
+
+### **Step 3: Build and Run the Docker Container**
+
+
+
+1. Build the Docker image:
+
+
+```shell
+docker build -t payop-encrypt .
+```
+
+
+
+1. Run the container:
+
+
+```shell
+docker run --rm payop-encrypt
+```
+
+
+
+### **✅ Output**
+
+You will see something like:
+
+
+```shell
+Encrypted Base64 Payload:  9kQ7v9nXLHjeOyIqi+hIJfEKuOCQZ2C5WWVcnmfPHUxh1EbK5g=
+```
+
 </details>
