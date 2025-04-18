@@ -199,8 +199,9 @@ curl -X POST "https://api.payop.com/v1/invoices/create" \
 >* **Do not use the identifier in the response body (it will be removed in future API versions).**
 
 
-#### ![response](https://img.shields.io/badge/fail-response-red?style=for-the-badge) (Wrong Signature):**
+#### **Wrong Signature:**
 
+![response](https://img.shields.io/badge/fail-response-red?style=for-the-badge)
 
 ```json
 {
@@ -288,8 +289,9 @@ curl -X GET "https://api.payop.com/v1/invoices/{invoiceID}" \
 ```
 
 
-#### ![response](https://img.shields.io/badge/fail-response-red?style=for-the-badge) (Invoice Not Found):**
+#### **Invoice Not Found:**
 
+![response](https://img.shields.io/badge/fail-response-red?style=for-the-badge)
 
 ```json
 {
@@ -436,9 +438,9 @@ curl -X GET "https://api.payop.com/v1/instrument-settings/payment-methods/availa
 }
 
 ```
+#### **Invalid Token:**
 
-
-#### ![response](https://img.shields.io/badge/fail-response-red?style=for-the-badge) (Invalid Token):**
+![response](https://img.shields.io/badge/fail-response-red?style=for-the-badge) 
 
 
 ```json
