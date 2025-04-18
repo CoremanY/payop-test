@@ -87,7 +87,7 @@ curl -X POST \
 * **<code>paymentMethod</code>: The payment method ID.**
 * **<code>checkStatusUrl</code>: A URL of a page that will be displayed when the user is redirected to the payment provider's page.**
 
-**Response Example (Success):**
+![response](https://img.shields.io/badge/success-response-green?style=for-the-badge)
 
 
 ```json
@@ -219,7 +219,7 @@ Authorization: Bearer YOUR_JWT_TOKEN
 ```
 
 
-**Response Example (Success):**
+![response](https://img.shields.io/badge/success-response-green?style=for-the-badge)
 
 
 ```json
@@ -339,8 +339,8 @@ https://api.payop.com/v1/checkout/void
 
 * **<code>invoiceIdentifier</code>: The unique invoice ID.**
 
-**Response Example (Success):**
 
+![response](https://img.shields.io/badge/success-response-green?style=for-the-badge)
 
 ```json
 {

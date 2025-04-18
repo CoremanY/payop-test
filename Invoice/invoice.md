@@ -182,7 +182,7 @@ curl -X POST "https://api.payop.com/v1/invoices/create" \
 ```
 
 
-#### **Successful Response Example:**
+![response](https://img.shields.io/badge/success-response-green?style=for-the-badge)
 
 
 ```json
@@ -247,7 +247,7 @@ curl -X GET "https://api.payop.com/v1/invoices/{invoiceID}" \
 ```
 
 
-#### **Successful Response Example:**
+![response](https://img.shields.io/badge/success-response-green?style=for-the-badge)
 
 
 ```json
@@ -398,7 +398,7 @@ curl -X GET "https://api.payop.com/v1/instrument-settings/payment-methods/availa
 
 
 
-#### **Successful Response Example:**
+![response](https://img.shields.io/badge/success-response-green?style=for-the-badge)
 
 
 ```json

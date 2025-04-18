@@ -145,7 +145,7 @@ curl -X POST "https://api.payop.com/v1/refunds/create" \
 
 
 
-### **Successful Response Example:**
+![response](https://img.shields.io/badge/success-response-green?style=for-the-badge)
 
 
 ```json
@@ -235,7 +235,7 @@ curl -X GET "https://api.payop.com/v1/refunds/user-refunds?query[identifier]=7ed
 ** **
 
 
-### **Response Example:**
+![response](https://img.shields.io/badge/success-response-green?style=for-the-badge)
 
 **Includes refund metadata, amount, status, and original transaction info.**
 
@@ -307,7 +307,7 @@ curl -X GET "https://api.payop.com/v1/refunds/user-refunds" \
 
 
 
-### **Response Example:**
+![response](https://img.shields.io/badge/success-response-green?style=for-the-badge)
 
 **List of refund entries with associated details.**
 

@@ -267,7 +267,7 @@ curl -X GET "https://payop.com/v1/instrument-settings/payment-methods/available-
 
 
 
-### **Response Example:**
+![response](https://img.shields.io/badge/success-response-green?style=for-the-badge)
 
 
 ```json
