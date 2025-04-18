@@ -5,95 +5,14 @@
 **The Withdrawal API allows merchants to process fund withdrawals from their account to external recipients, such as customers, partners, or employees. Withdrawals can be created individually or in batches (mass payouts) and support multiple methods and currencies. All operations require authentication and encrypted payloads.**
 
 
-<table>
-  <tr>
-   <td>
-<h5 style="text-align: center"><strong>#</strong></h5>
+| # | Endpoint                                                                                       | Method                                                                 | Auth Required | Purpose                                                                                          |
+|---|------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|----------------|--------------------------------------------------------------------------------------------------|
+| 1 | [`/v1/withdrawals/user-withdrawals?query[identifier]={withdrawalId}`](#1-get-withdrawal-details) | ![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)    | ✅ Yes         | Get detailed information about a specific withdrawal by ID.                                     |
+| 2 | [`/v1/withdrawals/user-withdrawals`](#2-get-withdrawals-list)                                  | ![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)    | ✅ Yes         | Retrieve a list of all withdrawals initiated by the merchant.                                   |
+| 3 | [`/v1/withdrawals/create-mass`](#3-create-mass-withdrawal)                                     | ![POST](https://img.shields.io/badge/-POST-green?style=for-the-badge) | ✅ Yes         | Submit one or more withdrawal requests as a batch (mass withdrawal).                            |
+| 4 | [`/v1/instrument-settings/payment-methods/available-withdrawal-for-user`](#4-get-available-withdrawal-methods) | ![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)    | ✅ Yes         | Get all available withdrawal payment methods for the authenticated user.                        |
+| 5 | [`{Withdraw IPN URL configured in project settings}`](#5-ipn--withdrawal-notifications)                        | ![POST](https://img.shields.io/badge/-POST-green?style=for-the-badge) | ❌ No          | Receive asynchronous Instant Payment Notifications (IPNs) for status updates on withdrawals.    |
 
-
-   </td>
-   <td>
-<h5 style="text-align: center"><strong>Endpoint</strong></h5>
-
-
-   </td>
-   <td>
-<h5 style="text-align: center"><strong>Method</strong></h5>
-
-
-   </td>
-   <td>
-<h5 style="text-align: center"><strong>Auth Required</strong></h5>
-
-
-   </td>
-   <td>
-<h5 style="text-align: center"><strong>Purpose</strong></h5>
-
-
-   </td>
-  </tr>
-  <tr>
-   <td><strong>1</strong>
-   </td>
-   <td><strong>/v1/withdrawals/user-withdrawals?query[identifier]={withdrawalId}</strong>
-   </td>
-   <td><strong>GET</strong>
-   </td>
-   <td><strong>✅ Yes</strong>
-   </td>
-   <td><strong>Get detailed information about a specific withdrawal by ID.</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>2</strong>
-   </td>
-   <td><strong>/v1/withdrawals/user-withdrawals</strong>
-   </td>
-   <td><strong>GET</strong>
-   </td>
-   <td><strong>✅ Yes</strong>
-   </td>
-   <td><strong>Retrieve a list of all withdrawals initiated by the merchant.</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>3</strong>
-   </td>
-   <td><strong>/v1/withdrawals/create-mass</strong>
-   </td>
-   <td><strong>POST</strong>
-   </td>
-   <td><strong>✅ Yes</strong>
-   </td>
-   <td><strong>Submit one or more withdrawal requests as a batch (mass withdrawal).</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>4</strong>
-   </td>
-   <td><strong>/v1/instrument-settings/payment-methods/available-withdrawal-for-user</strong>
-   </td>
-   <td><strong>GET</strong>
-   </td>
-   <td><strong>✅ Yes</strong>
-   </td>
-   <td><strong>Get all available withdrawal payment methods for the authenticated user.</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>5</strong>
-   </td>
-   <td><strong>{Withdraw IPN URL configured in project settings}</strong>
-   </td>
-   <td><strong>POST</strong>
-   </td>
-   <td><strong>❌ No</strong>
-   </td>
-   <td><strong>Receive asynchronous Instant Payment Notifications (IPNs) for status updates on withdrawals.</strong>
-   </td>
-  </tr>
-</table>
 
 
 
@@ -367,7 +286,7 @@ curl -X GET "https://payop.com/v1/instrument-settings/payment-methods/available-
 
 
 
-### **5. Withdrawal Flow Overview**
+### **🏦 Withdrawal Flow Overview**
 
 
 
@@ -378,7 +297,7 @@ curl -X GET "https://payop.com/v1/instrument-settings/payment-methods/available-
 5. **Update internal status only after receiving a final status (<code>accepted</code> or <code>rejected</code>).**
 
 
-### **6. IPN – Withdrawal Notifications**
+### **5. IPN – Withdrawal Notifications**
 
 
 ### **Purpose:**
