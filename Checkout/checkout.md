@@ -62,7 +62,7 @@ Authorization: Bearer YOUR_JWT_TOKEN
 
 #### **Example Usage:**
 
-**Request:**
+![POST](https://img.shields.io/badge/request-post-yellow?style=for-the-badge)
 
 
 ```shell
@@ -125,9 +125,7 @@ curl -X POST \
 
 #### **Example Usage:**
 
-**Request:**  
-
-![GET](https://img.shields.io/badge/-GET-darkgreen?style=for-the-badge)
+![GET](https://img.shields.io/badge/request-get-darkgreen?style=for-the-badge)
 
 
 ```shell
@@ -203,9 +201,7 @@ https://api.payop.com/v1/checkout/check-invoice-status/{invoiceID}
 
 #### **Example Usage:**
 
-**Request:**  
-
-![GET](https://img.shields.io/badge/-GET-darkgreen?style=for-the-badge)
+![GET](https://img.shields.io/badge/request-get-darkgreen?style=for-the-badge)
 
 
 ```shell
@@ -330,9 +326,7 @@ Status | Type         | Description                                             
 
 #### **Example Usage:**
 
-**Request:**
-
-![POST](https://img.shields.io/badge/-POST-yellow?style=for-the-badge)
+![POST](https://img.shields.io/badge/request-POST-yellow?style=for-the-badge)
 
 ```shell
 https://api.payop.com/v1/checkout/void

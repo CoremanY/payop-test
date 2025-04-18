@@ -171,7 +171,8 @@ curl -X POST "https://api.payop.com/v1/checkout/create" \
 
 ```
 
-**Request example:**
+![POST](https://img.shields.io/badge/request-post-yellow?style=for-the-badge)
+
 
 ```json
 {

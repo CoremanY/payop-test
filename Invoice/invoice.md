@@ -143,8 +143,7 @@ https://api.payop.com/v1/invoices/create
   </tr>
 </table>
 
-
-#### **Request Example:**
+![POST](https://img.shields.io/badge/request-post-yellow?style=for-the-badge)
 
 
 ```shell
@@ -238,7 +237,7 @@ https://api.payop.com/v1/invoices/{invoiceID}
 * **The response contains invoice status, amount, payment method, and metadata.**
 
 
-#### **Request Example:**
+![GET](https://img.shields.io/badge/request-get-darkgreen?style=for-the-badge)
 
 
 ```shell
@@ -387,7 +386,7 @@ https://api.payop.com/v1/instrument-settings/payment-methods/available-for-appli
 * **The response includes available payment methods, supported currencies, and country restrictions.**
 
 
-#### **Request Example:**
+![GET](https://img.shields.io/badge/request-get-darkgreen?style=for-the-badge)
 
 
 ```shell

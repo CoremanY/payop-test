@@ -222,7 +222,7 @@ Authorization: Bearer YOUR_JWT_TOKEN
 ** **
 
 
-### **Example Request:**
+![GET](https://img.shields.io/badge/request-get-darkgreen?style=for-the-badge)
 
 
 ```shell
@@ -296,7 +296,7 @@ Authorization: Bearer YOUR_JWT_TOKEN
 
 
 
-### **Example Request:**
+![GET](https://img.shields.io/badge/request-get-darkgreen?style=for-the-badge)
 
 
 ```shell

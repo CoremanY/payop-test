@@ -44,7 +44,7 @@ Authorization: Bearer YOUR_JWT_TOKEN
 
 
 
-### **Request Example:**
+![GET](https://img.shields.io/badge/request-get-darkgreen?style=for-the-badge)
 
 
 ```shell
@@ -113,7 +113,7 @@ curl -X GET "https://api.payop.com/v1/withdrawals/user-withdrawals?query[identif
 
 
 
-### **Request Example:**
+![GET](https://img.shields.io/badge/request-get-darkgreen?style=for-the-badge)
 
 
 ```shell
@@ -256,7 +256,7 @@ curl -X POST "https://api.payop.com/v1/withdrawals/create-mass" \
 ** **
 
 
-### **Request Example:**
+![GET](https://img.shields.io/badge/request-get-darkgreen?style=for-the-badge)
 
 
 ```shell
