@@ -149,7 +149,7 @@ cd payop-withdrawal-encrypt
 
 
 
-1. Create the `encrypt.php` script:
+2. Create the `encrypt.php` script:
 
 
 ```shell
@@ -158,7 +158,7 @@ touch encrypt.php
 
 
 
-1. Paste the following example script into `encrypt.php`:
+3. Paste the following example script into `encrypt.php`:
 
 
 ```shell
@@ -184,7 +184,7 @@ echo "Encrypted Base64 Payload:\n\n" . $base64Payload . PHP_EOL;
 
 
 
-1. Add your `с9f5753e-587f-41fa-9b2a-b7ab998d1bcc` certificate file to the same folder.
+4. Add your `с9f5753e-587f-41fa-9b2a-b7ab998d1bcc` certificate file to the same folder.
 
 You should now have:
 
@@ -260,7 +260,7 @@ cd payop-python-encrypt
 
 
 
-1. Create the encryption script:
+2. Create the encryption script:
 
 
 ```shell
@@ -269,7 +269,7 @@ touch encrypt.py
 
 
 
-1. Paste the following code into `encrypt.py`:
+3. Paste the following code into `encrypt.py`:
 
 
 ```shell
@@ -324,7 +324,7 @@ docker build -t payop-encrypt .
 
 
 
-1. Run the container:
+2. Run the container:
 
 
 ```shell
