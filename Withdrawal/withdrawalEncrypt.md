@@ -124,6 +124,8 @@ curl -X POST https://api.payop.com/v1/withdrawals/create-mass \
 {"data":"YwukuaG2G0whJfHWpdIXrMay76o1\/VuSmUr8cpSUGCDhqEnry4FsFOTJpmccoQ6w\/Z2VmQKgkvJ\/Hz7v8VrvYSfoTsnX4cKvoUasgC2xOwgPdYzcmx5zIq4SlEHx418OwM\/oqAHb5cEO\/IFwBlMHzL1IAc7yFCwOjSUMg+8SNlawtTLGRNtIb8V6\/gqZRZXoyQHuXoclRE1tR\/2GZjjiD6aEM0JQPNg3NssPxuQuRiRAgzhMPrnCS53FQIjZrR9sVDcb4iJxhpXORHpSZ8vLgT9Ya6RSdsNUWrpaTUBr1MACULgN8Oib1G8U7PK3YoNb8APfibnAklTLuo7HDkvFB7FQ+xIOvYfg4LgK5vbQIRensLzGVz8ktIOyLpwOw2wBgf6HrUI2HiooCg+o9hR0qqRoZCSi\/psRgQU5Ry3fSSWsw+Q39pNCm9sbQvYQZ6akti7KrcDYdLAjKFKu3DdB2lX38shjErM\/QMxjBegeOsl50DouknCq1BImSCR5HYJhJgRP1sZo8S5RfiBjSzXbgcddaSG6kIkRirCt"}
 ```
 
+### **📖	 User Guides**
+---
 
 <details>
    <summary> 👉 Guide: Run PHP Script to Encrypt Withdrawal Payload Using Docker</summary> 
