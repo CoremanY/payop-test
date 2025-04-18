@@ -54,7 +54,7 @@ A **Checkout IPN (Instant Payment Notification)** is a server-to-server message 
 ## **IPN Payload (Example)**
 
 
-```shell
+```json
 {
  "invoice": {
    "id": "d024f697-ba2d-456f-910e-4d7fdfd338dd",

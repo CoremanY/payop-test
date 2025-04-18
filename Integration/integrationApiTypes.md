@@ -106,7 +106,7 @@ curl -X GET "https://api.payop.com/v1/instrument-settings/payment-methods/availa
 
 The response includes method identifiers and the required payer fields for each method. Example response for "Pay by bank":
 
-```shell
+```json
 {
  "data": [
    {
@@ -173,7 +173,7 @@ curl -X POST "https://api.payop.com/v1/checkout/create" \
 
 **Request example:**
 
-```shell
+```json
 {
  "invoiceIdentifier": "YOUR_INVOICE_ID",
  "customer": {
@@ -195,7 +195,7 @@ curl -X POST "https://api.payop.com/v1/checkout/create" \
 
 **Successful response:**
 
-```shell
+```json
 {
  "data": {
    "isSuccess": true,
@@ -220,7 +220,7 @@ curl -X GET "https://api.payop.com/v1/checkout/check-invoice-status/{invoiceID}"
 **Possible response:**
 
 
-```shell
+```json
 {
  "data": {
    "isSuccess": true,

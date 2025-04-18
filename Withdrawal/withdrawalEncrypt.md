@@ -25,7 +25,7 @@
 **Prepare the JSON structure you want to send.**
 
 
-```shell
+```json
 [
  {
    "method": 14,

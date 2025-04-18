@@ -14,7 +14,7 @@
 **Example:**
 
 
-```shell
+```json
 
 {
  "data": {
@@ -41,7 +41,7 @@
 **Example:**
 
 
-```shell
+```json
 
 {
  "data": {
@@ -100,9 +100,10 @@
 > **Authentication token is missing, expired, or invalid.**
 
 
-```shell
-
-json{   "message": "Full authentication is required to access this resource." }
+```json
+{ 
+"message": "Full authentication is required to access this resource." 
+}
 
 ```
 
@@ -116,7 +117,7 @@ json{   "message": "Full authentication is required to access this resource." }
 > **The authenticated user does not have permission to access the requested resource.**
 
 
-```shell
+```json
 {   "message": "Access denied." }
 ```
 
@@ -130,7 +131,7 @@ json{   "message": "Full authentication is required to access this resource." }
 > **The requested resource could not be found (e.g., invoice or transaction ID is incorrect).**
 
 
-```shell
+```json
 {   "message": "Invoice not found" }
 ```
 
@@ -147,7 +148,7 @@ json{   "message": "Full authentication is required to access this resource." }
 #### **🔸 Case: Payment method not enabled**
 
 
-```shell
+```json
 {   "message": "Method must be enabled to use it" }
 ```
 
@@ -156,7 +157,7 @@ json{   "message": "Full authentication is required to access this resource." }
 #### **🔸 Case: Validation error**
 
 
-```shell
+```json
 {
  "message": {
    "email": [
@@ -178,7 +179,7 @@ json{   "message": "Full authentication is required to access this resource." }
 > **A generic error occurred on the server side.**
 
 
-```shell
+```json
 
 {   "message": "Something went wrong, try again or contact support." }
 

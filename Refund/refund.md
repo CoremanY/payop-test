@@ -218,7 +218,7 @@ curl -X POST "https://api.payop.com/v1/refunds/create" \
 ### **Successful Response Example:**
 
 
-```shell
+```json
 {
  "data": "",
  "status": 1
@@ -229,7 +229,7 @@ curl -X POST "https://api.payop.com/v1/refunds/create" \
 **📌 The refund identifier is returned in the response header:**
 
 
-```shell
+```json
 identifier: 81962ed0-a65c-4d1a-851b-b3dbf9750399
 ```
 
@@ -238,7 +238,7 @@ identifier: 81962ed0-a65c-4d1a-851b-b3dbf9750399
 ### **Error Response Examples:**
 
 
-```shell
+```json
 {   "message": "Refund amount is bigger than transaction amount" }
 ```
 
@@ -246,7 +246,7 @@ identifier: 81962ed0-a65c-4d1a-851b-b3dbf9750399
 ** **
 
 
-```shell
+```json
 {   "message": "Transaction not found" }
 ```
 
@@ -254,7 +254,7 @@ identifier: 81962ed0-a65c-4d1a-851b-b3dbf9750399
 ** **
 
 
-```shell
+```json
 {   "message": "Full authentication is required to access this resource." }
 ```
 
@@ -309,7 +309,7 @@ curl -X GET "https://api.payop.com/v1/refunds/user-refunds?query[identifier]=7ed
 **Includes refund metadata, amount, status, and original transaction info.**
 
 
-```shell
+```json
 {
  "data": [
    {
@@ -379,7 +379,7 @@ curl -X GET "https://api.payop.com/v1/refunds/user-refunds" \
 **List of refund entries with associated details.**
 
 
-```shell
+```json
 {
  "data": [
    {
@@ -482,7 +482,7 @@ curl -X GET "https://api.payop.com/v1/refunds/user-refunds" \
 ### **Example IPN Payload:**
 
 
-```shell
+```json
 {
 
  "transaction": {
