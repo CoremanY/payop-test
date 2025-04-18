@@ -32,50 +32,13 @@ Authorization: Bearer YOUR_JWT_TOKEN
 
 ---
 
-<table>
-  <tr>
-    <td><h5 style="text-align: center"><strong>#</strong></h5></td>
-    <td><h5 style="text-align: center"><strong>Endpoint</strong></h5></td>
-    <td><h5 style="text-align: center"><strong>Method</strong></h5></td>
-    <td><h5 style="text-align: center"><strong>Auth Required</strong></h5></td>
-    <td><h5 style="text-align: center"><strong>Purpose</strong></h5></td>
-  </tr>
-  <tr>
-    <td><strong>1</strong></td>
-    <td><strong>/v1/checkout/create</strong></td>
-    <td><strong>POST</strong></td>
-    <td><strong>✅ Yes</strong></td>
-    <td><strong>Create a new checkout transaction using invoice details.</strong></td>
-  </tr>
-  <tr>
-    <td><strong>2</strong></td>
-    <td><strong>/v1/checkout/check-invoice-status/{invoiceID}</strong></td>
-    <td><strong>GET</strong></td>
-    <td><strong>✅ Yes</strong></td>
-    <td><strong>Check the current status of a specific invoice.</strong></td>
-  </tr>
-  <tr>
-    <td><strong>3</strong></td>
-    <td><strong>/v2/transactions/{transactionID}</strong></td>
-    <td><strong>GET</strong></td>
-    <td><strong>✅ Yes</strong></td>
-    <td><strong>Retrieve detailed information about a specific transaction.</strong></td>
-  </tr>
-  <tr>
-    <td><strong>4</strong></td>
-    <td><strong>{Checkout IPN URL configured in project settings}</strong></td>
-    <td><strong>POST</strong></td>
-    <td><strong>❌ No</strong></td>
-    <td><strong>Receive IPNs for transaction status updates (e.g., success, fail).</strong></td>
-  </tr>
-  <tr>
-    <td><strong>5</strong></td>
-    <td><strong>/v1/checkout/void</strong></td>
-    <td><strong>POST</strong></td>
-    <td><strong>❌ No</strong></td>
-    <td><strong>Void (cancel) a previously created but not completed checkout transaction.</strong></td>
-  </tr>
-</table>
+| # | Endpoint                                                                     | Method                                                                 | Auth Required | Purpose                                                                 |
+|---|------------------------------------------------------------------------------|------------------------------------------------------------------------|----------------|-------------------------------------------------------------------------|
+| 1 | [`/v1/checkout/create`](#1-create-checkout)                                  | ![POST](https://img.shields.io/badge/-POST-green?style=for-the-badge) | ✅ Yes         | Create a new checkout transaction using invoice details.               |
+| 2 | [`/v1/checkout/check-invoice-status/{invoiceID}`](#2-check-invoice-status)  | ![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)    | ✅ Yes         | Check the current status of a specific invoice.                        |
+| 3 | [`/v2/transactions/{transactionID}`](#3-get-transaction-details)            | ![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)    | ✅ Yes         | Retrieve detailed information about a specific transaction.           |
+| 4 | [`{Checkout IPN URL configured in project settings}`](#4-checkout-ipn)      | ![POST](https://img.shields.io/badge/-POST-green?style=for-the-badge) | ❌ No          | Receive IPNs for transaction status updates (e.g., success, fail).     |
+| 5 | [`/v1/checkout/void`](#5-void-checkout)                                      | ![POST](https://img.shields.io/badge/-POST-green?style=for-the-badge) | ❌ No          | Void (cancel) a previously created but not completed checkout transaction. |
 
 
 ### **1. Create Checkout**
