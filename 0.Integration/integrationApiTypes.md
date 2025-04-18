@@ -27,7 +27,8 @@ The **Hosted Page Integration** is the **simplest** and **most convenient** meth
 
 ### **Checkout Flow**
 
-1. **Create Invoice** `POST https://api.payop.com/v1/invoices/create` (See the Invoice section for more details)
+1. **Create Invoice** `POST https://api.payop.com/v1/invoices/create`   
+*( [See the Invoice section for more details](../1.Invoice/invoice.md) )*
 2. **Redirect payer to invoice preprocessing page:**
 3. `https://checkout.payop.com/{{locale}}/payment/invoice-preprocessing/{{invoiceId}}`
     * `{{locale}}` → Language of the invoice (`en`, `ru`, etc.).
