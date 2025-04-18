@@ -102,9 +102,9 @@
 
 
 ```json
-{ 
-"message": "Full authentication is required to access this resource." 
-}
+ { 
+   "message": "Full authentication is required to access this resource." 
+ }
 
 ```
 
@@ -119,7 +119,7 @@
 
 ```json
  {   
-  "message": "Access denied."
+   "message": "Access denied."
  }
 ```
 
@@ -133,9 +133,9 @@
 
 
 ```json
-{   
-  "message": "Invoice not found" 
-}
+ {   
+   "message": "Invoice not found" 
+ }
 ```
 
 
@@ -185,7 +185,7 @@
 
 ```json
  {   
-"message": "Something went wrong, try again or contact support."
+   "message": "Something went wrong, try again or contact support."
  }
 
 ```
