@@ -44,104 +44,24 @@ https://api.payop.com/v1/invoices/create
 
  ![Key Parameters](https://img.shields.io/badge/key_parameters-lightgray?style=for-the-badge)
 
-<table>
-  <tr>
-   <td><strong>Parameter</strong></td>
-   <td><strong>Type</strong></td>
-   <td><strong>Description</strong></td>
-   <td><strong>Required</strong></td>
-  </tr>
-  <tr>
-   <td><code>publicKey</code></td>
-   <td><code>string</code></td>
-   <td>Public key issued in the project.</td>
-   <td>✅</td>
-  </tr>
-  <tr>
-   <td><code>order</code></td>
-   <td><code>JSON object</code></td>
-   <td>Order details.</td>
-   <td>✅</td>
-  </tr>
-  <tr>
-   <td><code>order.id</code></td>
-   <td><code>string</code></td>
-   <td>Payment ID.</td>
-   <td>✅</td>
-  </tr>
-  <tr>
-   <td><code>order.amount</code></td>
-   <td><code>string</code></td>
-   <td>Payment amount.</td>
-   <td>✅</td>
-  </tr>
-  <tr>
-   <td><code>order.currency</code></td>
-   <td><code>string</code></td>
-   <td>Payment currency.</td>
-   <td>✅</td>
-  </tr>
-  <tr>
-   <td><code>order.description</code></td>
-   <td><code>string</code></td>
-   <td>Description of payment.</td>
-   <td>❌</td>
-  </tr>
-  <tr>
-   <td><code>order.items</code></td>
-   <td><code>json array</code></td>
-   <td>List of products/services.</td>
-   <td>❌</td>
-  </tr>
-  <tr>
-   <td><code>payer</code></td>
-   <td><code>JSON object</code></td>
-   <td>Payer details.</td>
-   <td>✅</td>
-  </tr>
-  <tr>
-   <td><code>payer.email</code></td>
-   <td><code>string</code></td>
-   <td>Payer email.</td>
-   <td>✅</td>
-  </tr>
-  <tr>
-   <td><code>language</code></td>
-   <td><code>string</code></td>
-   <td>Language of the checkout page (e.g., <code>en</code>, <code>ru</code>).</td>
-   <td>❌</td>
-  </tr>
-  <tr>
-   <td><code>resultUrl</code></td>
-   <td><code>string</code></td>
-   <td>URL for successful payment redirection.</td>
-   <td>❌</td>
-  </tr>
-  <tr>
-   <td><code>failPath</code></td>
-   <td><code>string</code></td>
-   <td>URL for failed payment redirection.</td>
-   <td>❌</td>
-  </tr>
-  <tr>
-   <td><code>signature</code></td>
-   <td><code>string</code></td>
-   <td>SHA-256 hash for security verification.</td>
-   <td>✅</td>
-  </tr>
-  <tr>
-   <td><code>paymentMethod</code></td>
-   <td><code>string</code></td>
-   <td>Specific payment method ID.</td>
-   <td>❌</td>
-  </tr>
-  <tr>
-   <td><code>metadata</code></td>
-   <td><code>JSON object</code></td>
-   <td>Additional data for merchant use.</td>
-   <td>❌</td>
-  </tr>
-</table>
+| **Parameter**         | **Type**         | **Description**                                                                 | **Required** |
+|-----------------------|------------------|----------------------------------------------------------------------------------|--------------|
+| `publicKey`           | `string`         | Public key issued in the project.                                               | ✅           |
+| `order`               | `JSON object`    | Order details.                                                                  | ✅           |
+| `order.id`            | `string`         | Payment ID.                                                                     | ✅           |
+| `order.amount`        | `string`         | Payment amount.                                                                 | ✅           |
+| `order.currency`      | `string`         | Payment currency.                                                               | ✅           |
+| `order.description`   | `string`         | Description of payment.                                                         | ❌           |
+| `order.items`         | `json array`     | List of products/services.                                                      | ❌           |
+| `payer`               | `JSON object`    | Payer details.                                                                  | ✅           |
+| `payer.email`         | `string`         | Payer email.                                                                    | ✅           |
+| `language`            | `string`         | Language of the checkout page (e.g., `en`, `ru`).                               | ❌           |
+| `resultUrl`           | `string`         | URL for successful payment redirection. Allowed to use [template expression](#template-expressions). | ❌ |
+| `failPath`            | `string`         | URL for failed payment redirection. Allowed to use [template expression](#template-expressions).    | ❌ |
+| `signature`           | `string`         | SHA-256 hash for security verification.                                         | ✅           |
+| `paymentMethod`       | `string`         | Specific payment method ID.                                                     | ❌           |
+| `metadata`            | `JSON object`    | Additional data for merchant use.                                               | ❌           |
+
 
 ![POST](https://img.shields.io/badge/request-post-yellow?style=for-the-badge)
 
@@ -208,6 +128,35 @@ curl -X POST "https://api.payop.com/v1/invoices/create" \
  "message": "Wrong signature"
 }
 
+```
+
+### Template expressions
+
+Template expressions are useful when you need to make some replacements in the strings. 
+Currently, only the parameters below support template expressions.
+
+Parameter      |        Patterns          |
+---------------|--------------------------| 
+resultUrl      | {{invoiceId}},  {{txid}} |
+failPath       | {{invoiceId}},  {{txid}} |
+
+
+Pattern        |        Replacement
+---------------|-------------------------------------| 
+{{invoiceId}}  | Replaced with Payop invoice ID      |
+{{txid}}       | Replaced with Payop transaction ID  |
+
+**Template expression examples:**
+```shell
+# Template
+https://your.site/result-page/?invoiceId={{invoiceId}}&txid={{txid}}
+# Result
+https://your.site/result-page/?invoiceId=b8bf37ab-fc69-44df-bfeb-b9a879ce20b7&txid=1eeda2f2-d3e1-4edd-853e-3d897bc629b2
+
+# Template
+https://your.site/result-page/{{txid}}/
+# Result
+https://your.site/result-page/1eeda2f2-d3e1-4edd-853e-3d897bc629b2/
 ```
 
 
