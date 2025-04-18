@@ -162,7 +162,8 @@ curl -X POST \
 
 #### **Example Usage:**
 
-**Request:**![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)
+**Request:**  
+![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)
 
 
 ```shell
