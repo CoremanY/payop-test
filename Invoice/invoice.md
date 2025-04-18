@@ -16,10 +16,11 @@
 
 #### **Endpoint:**
 
+![POST](https://img.shields.io/badge/-POST-green?style=for-the-badge)
 
 ```shell
 
-POST https://api.payop.com/v1/invoices/create
+https://api.payop.com/v1/invoices/create
 
 ```
 

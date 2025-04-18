@@ -332,9 +332,10 @@ Status | Type         | Description                                             
 
 **Request:**
 
+![POST](https://img.shields.io/badge/-POST-green?style=for-the-badge)
 
 ```shell
-POST https://api.payop.com/v1/checkout/void
+https://api.payop.com/v1/checkout/void
 ```
 
 

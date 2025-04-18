@@ -134,9 +134,10 @@ curl -X GET "https://api.payop.com/v1/withdrawals/user-withdrawals" \
 
 ### **Endpoint:**
 
+![POST](https://img.shields.io/badge/-POST-green?style=for-the-badge)
 
 ```shell
-POST https://api.payop.com/v1/withdrawals/create-mass
+https://api.payop.com/v1/withdrawals/create-mass
 ```
 
 
