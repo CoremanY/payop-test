@@ -35,6 +35,69 @@ Authorization: Bearer YOUR_JWT_TOKEN
 
 ## **Checkout Section**
 
+### **Create Checkout**
+
+
+#### **Purpose:**
+
+
+
+* **This endpoint creates a checkout transaction linked to an invoice.**
+* **Required when a customer wants to make a payment.**
+
+
+#### **How It Works:**
+
+
+
+* **A <code>POST</code> request is sent with the invoice details, payment method, and customer information.**
+* **The response returns a unique transaction ID.**
+
+
+#### **Example Usage:**
+
+**Request:**
+
+
+```shell
+curl -X POST \
+  https://api.payop.com/v1/checkout/create \
+  -H 'Content-Type: application/json' \
+  -d '{
+	"invoiceIdentifier": "INVOICE_IDENTIFIER",
+	"customer": {"email": "test@email.com", "name":"CUSTOMER_NAME"},
+	"checkStatusUrl": "https://your.site/check-status/{{txid}}",
+	"paymentMethod": 935
+}'
+```
+
+
+** **
+
+**Key Parameters:**
+
+* **<code>invoiceIdentifier</code>: The invoice ID.**
+* **<code>customer</code>: Customer details (name, email, IP address).**
+* **<code>paymentMethod</code>: The payment method ID.**
+* **<code>checkStatusUrl</code>: A URL of a page that will be displayed when the user is redirected to the payment provider's page.**
+
+**Response Example (Success):**
+
+
+```shell
+{
+ "data": {
+   "isSuccess": true,
+   "message": "",
+   "txid": "transaction_unique_id"
+ },
+ "status": 1
+}
+```
+
+
+---
+
 
 ### **Check invoice status**
 
@@ -110,63 +173,6 @@ GET https://api.payop.com/v1/checkout/check-invoice-status/{invoiceID}
 
 
 ** **
-
-
-### **Create Checkout**
-
-
-#### **Purpose:**
-
-
-
-* **This endpoint creates a checkout transaction linked to an invoice.**
-* **Required when a customer wants to make a payment.**
-
-
-#### **How It Works:**
-
-
-
-* **A <code>POST</code> request is sent with the invoice details, payment method, and customer information.**
-* **The response returns a unique transaction ID.**
-
-
-#### **Example Usage:**
-
-**Request:**
-
-
-```shell
-POST https://api.payop.com/v1/checkout/create
-```
-
-
-** **
-
-**Key Parameters:**
-
-* **<code>invoiceIdentifier</code>: The invoice ID.**
-* **<code>customer</code>: Customer details (name, email, IP address).**
-* **<code>paymentMethod</code>: The payment method ID.**
-* **<code>checkStatusUrl</code>: The URL to check the payment status.**
-
-**Response Example (Success):**
-
-
-```shell
-{
- "data": {
-   "isSuccess": true,
-   "message": "",
-   "txid": "transaction_unique_id"
- },
- "status": 1
-}
-```
-
-
----
-
 
 ### **Get Transaction**
 
