@@ -161,7 +161,7 @@ idempotency-key: YOUR_UNIQUE_UUID  (Optional, recommended)
 * **The encrypted binary data should then be Base64 encoded before sending.**
 * **Certificates can be generated in your merchant account.**
 
-    **See “Request Payload Encrypt/Decrypt” section for PHP examples.**
+ *[See “Request Payload Encrypt/Decrypt” section for PHP examples.](withdrawalEncrypt.md)*
 
 
 

@@ -335,7 +335,7 @@ docker run --rm payop-encrypt
 
 ### **✅ Output**
 
-You will see something like:
+You should see similar result:
 
 
 ```shell
