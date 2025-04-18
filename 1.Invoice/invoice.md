@@ -132,8 +132,7 @@ curl -X POST "https://api.payop.com/v1/invoices/create" \
 
 ### Template expressions
 
-Template expressions are useful when you need to make some replacements in the strings. 
-Currently, only the parameters below support template expressions.
+Template expressions allow dynamic values to be inserted into strings. They are particularly useful on result pages, where you may want to redirect payers with specific transaction details. Currently, only the parameters listed below support template expressions.
 
 Parameter      |        Patterns          |
 ---------------|--------------------------| 
