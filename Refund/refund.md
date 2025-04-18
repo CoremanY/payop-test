@@ -7,83 +7,12 @@
 **All refund-related operations require authentication and are tied to the original transaction.**
 
 
-<table>
-  <tr>
-   <td>
-<h5 style="text-align: center"><strong>#</strong></h5>
-
-
-   </td>
-   <td>
-<h5 style="text-align: center"><strong>Endpoint</strong></h5>
-
-
-   </td>
-   <td>
-<h5 style="text-align: center"><strong>Method</strong></h5>
-
-
-   </td>
-   <td>
-<h5 style="text-align: center"><strong>Auth Required</strong></h5>
-
-
-   </td>
-   <td>
-<h5 style="text-align: center"><strong>Purpose</strong></h5>
-
-
-   </td>
-  </tr>
-  <tr>
-   <td><strong>1</strong>
-   </td>
-   <td><strong>/v1/refunds/create</strong>
-   </td>
-   <td><strong>POST</strong>
-   </td>
-   <td><strong>✅ Yes</strong>
-   </td>
-   <td><strong>Initiate a refund request for a completed transaction (full or partial).</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>2</strong>
-   </td>
-   <td><strong>/v1/refunds/user-refunds?query[identifier]={refundId}</strong>
-   </td>
-   <td><strong>GET</strong>
-   </td>
-   <td><strong>✅ Yes</strong>
-   </td>
-   <td><strong>Retrieve detailed information about a specific refund using its identifier.</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>3</strong>
-   </td>
-   <td><strong>/v1/refunds/user-refunds</strong>
-   </td>
-   <td><strong>GET</strong>
-   </td>
-   <td><strong>✅ Yes</strong>
-   </td>
-   <td><strong>Fetch the list of all refunds initiated by the merchant.</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>4</strong>
-   </td>
-   <td><strong>{Refund IPN URL from your project settings}</strong>
-   </td>
-   <td><strong>POST</strong>
-   </td>
-   <td><strong>❌ No</strong>
-   </td>
-   <td><strong>Receive an Instant Payment Notification (IPN) when a refund is accepted or rejected.</strong>
-   </td>
-  </tr>
-</table>
+| # | Endpoint                                                                 | Method                                                                 | Purpose                                                                                      |
+|---|--------------------------------------------------------------------------|------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
+| 1 | [`/v1/refunds/create`](#1-create-refund)                      | ![POST](https://img.shields.io/badge/-POST-green?style=for-the-badge) | Initiate a refund request for a completed transaction (full or partial).                    |
+| 2 | [`/v1/refunds/user-refunds?query[identifier]={refundId}`](#2-get-refund-details) | ![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)   | Retrieve detailed information about a specific refund using its identifier.                |
+| 3 | [`/v1/refunds/user-refunds`](#3-get-refund-list)                      | ![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge)    | Fetch the list of all refunds initiated by the merchant.                                    |
+| 4 | [`{Refund IPN URL from your project settings}`](#4-refund-ipn-instant-payment-notification) | ![POST](https://img.shields.io/badge/-POST-green?style=for-the-badge) | Receive an Instant Payment Notification (IPN) when a refund is accepted or rejected.       |
 
 
 
