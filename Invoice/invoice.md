@@ -43,138 +43,104 @@ POST https://api.payop.com/v1/invoices/create
 
 #### **Key Parameters:**
 
-
 <table>
   <tr>
-   <td>Parameter
-   </td>
-   <td>Type
-   </td>
-   <td>Description
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Description</strong></td>
+   <td><strong>Required</strong></td>
   </tr>
   <tr>
-   <td><strong><code>publicKey</code></strong>
-   </td>
-   <td><strong><code>string</code></strong>
-   </td>
-   <td><strong>Public key issued in the project (required).</strong>
-   </td>
+   <td><code>publicKey</code></td>
+   <td><code>string</code></td>
+   <td>Public key issued in the project.</td>
+   <td>✅</td>
   </tr>
   <tr>
-   <td><strong><code>order</code></strong>
-   </td>
-   <td><strong><code>JSON object</code></strong>
-   </td>
-   <td><strong>Order details (required).</strong>
-   </td>
+   <td><code>order</code></td>
+   <td><code>JSON object</code></td>
+   <td>Order details.</td>
+   <td>✅</td>
   </tr>
   <tr>
-   <td><strong><code>order.id</code></strong>
-   </td>
-   <td><strong><code>string</code></strong>
-   </td>
-   <td><strong>Payment ID (required).</strong>
-   </td>
+   <td><code>order.id</code></td>
+   <td><code>string</code></td>
+   <td>Payment ID.</td>
+   <td>✅</td>
   </tr>
   <tr>
-   <td><strong><code>order.amount</code></strong>
-   </td>
-   <td><strong><code>string</code></strong>
-   </td>
-   <td><strong>Payment amount (required).</strong>
-   </td>
+   <td><code>order.amount</code></td>
+   <td><code>string</code></td>
+   <td>Payment amount.</td>
+   <td>✅</td>
   </tr>
   <tr>
-   <td><strong><code>order.currency</code></strong>
-   </td>
-   <td><strong><code>string</code></strong>
-   </td>
-   <td><strong>Payment currency (required).</strong>
-   </td>
+   <td><code>order.currency</code></td>
+   <td><code>string</code></td>
+   <td>Payment currency.</td>
+   <td>✅</td>
   </tr>
   <tr>
-   <td><strong><code>order.description</code></strong>
-   </td>
-   <td><strong><code>string</code></strong>
-   </td>
-   <td><strong>Description of payment.</strong>
-   </td>
+   <td><code>order.description</code></td>
+   <td><code>string</code></td>
+   <td>Description of payment.</td>
+   <td>❌</td>
   </tr>
   <tr>
-   <td><strong><code>order.items</code></strong>
-   </td>
-   <td><strong><code>json array</code></strong>
-   </td>
-   <td><strong>List of products/services (can be an empty array).</strong>
-   </td>
+   <td><code>order.items</code></td>
+   <td><code>json array</code></td>
+   <td>List of products/services.</td>
+   <td>❌</td>
   </tr>
   <tr>
-   <td><strong><code>payer</code></strong>
-   </td>
-   <td><strong><code>JSON object</code></strong>
-   </td>
-   <td><strong>Payer details (required).</strong>
-   </td>
+   <td><code>payer</code></td>
+   <td><code>JSON object</code></td>
+   <td>Payer details.</td>
+   <td>✅</td>
   </tr>
   <tr>
-   <td><strong><code>payer.email</code></strong>
-   </td>
-   <td><strong><code>string</code></strong>
-   </td>
-   <td><strong>Payer email (required).</strong>
-   </td>
+   <td><code>payer.email</code></td>
+   <td><code>string</code></td>
+   <td>Payer email.</td>
+   <td>✅</td>
   </tr>
   <tr>
-   <td><strong><code>language</code></strong>
-   </td>
-   <td><strong><code>string</code></strong>
-   </td>
-   <td><strong>Language of the checkout page (<code>en</code>, <code>ru</code>, etc.).</strong>
-   </td>
+   <td><code>language</code></td>
+   <td><code>string</code></td>
+   <td>Language of the checkout page (e.g., <code>en</code>, <code>ru</code>).</td>
+   <td>❌</td>
   </tr>
   <tr>
-   <td><strong><code>resultUrl</code></strong>
-   </td>
-   <td><strong><code>string</code></strong>
-   </td>
-   <td><strong>URL for successful payment redirection.</strong>
-   </td>
+   <td><code>resultUrl</code></td>
+   <td><code>string</code></td>
+   <td>URL for successful payment redirection.</td>
+   <td>❌</td>
   </tr>
   <tr>
-   <td><strong><code>failPath</code></strong>
-   </td>
-   <td><strong><code>string</code></strong>
-   </td>
-   <td><strong>URL for failed payment redirection.</strong>
-   </td>
+   <td><code>failPath</code></td>
+   <td><code>string</code></td>
+   <td>URL for failed payment redirection.</td>
+   <td>❌</td>
   </tr>
   <tr>
-   <td><strong><code>signature</code></strong>
-   </td>
-   <td><strong><code>string</code></strong>
-   </td>
-   <td><strong>SHA-256 hash for security verification.</strong>
-   </td>
+   <td><code>signature</code></td>
+   <td><code>string</code></td>
+   <td>SHA-256 hash for security verification.</td>
+   <td>✅</td>
   </tr>
   <tr>
-   <td><strong><code>paymentMethod</code></strong>
-   </td>
-   <td><strong><code>string</code></strong>
-   </td>
-   <td><strong>(Optional) Specific payment method ID.</strong>
-   </td>
+   <td><code>paymentMethod</code></td>
+   <td><code>string</code></td>
+   <td>Specific payment method ID.</td>
+   <td>❌</td>
   </tr>
   <tr>
-   <td><strong><code>metadata</code></strong>
-   </td>
-   <td><strong><code>JSON object</code></strong>
-   </td>
-   <td><strong>(Optional) Additional data for merchant use.</strong>
-   </td>
+   <td><code>metadata</code></td>
+   <td><code>JSON object</code></td>
+   <td>Additional data for merchant use.</td>
+   <td>❌</td>
   </tr>
 </table>
-
 
 
 #### **Request Example:**
