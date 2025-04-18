@@ -72,7 +72,7 @@ Authorization: Bearer YOUR_JWT_TOKEN
     <td><strong>5</strong></td>
     <td><strong>/v1/checkout/void</strong></td>
     <td><strong>POST</strong></td>
-    <td><strong>✅ Yes</strong></td>
+    <td><strong>❌ No</strong></td>
     <td><strong>Void (cancel) a previously created but not completed checkout transaction.</strong></td>
   </tr>
 </table>
