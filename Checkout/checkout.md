@@ -123,9 +123,9 @@ curl -X POST \
     * **Fail: The payment attempt failed.**
 
 
-#### **Example Usage:**
+#### **Endpoint:**
 
-![GET](https://img.shields.io/badge/request-get-darkgreen?style=for-the-badge)
+![GET](https://img.shields.io/badge/-get-darkgreen?style=for-the-badge)
 
 
 ```shell
@@ -199,9 +199,9 @@ https://api.payop.com/v1/checkout/check-invoice-status/{invoiceID}
 * **The response includes transaction status, amount, error messages (if applicable), and payment method details.**
 
 
-#### **Example Usage:**
+#### **Endpoint:**
 
-![GET](https://img.shields.io/badge/request-get-darkgreen?style=for-the-badge)
+![GET](https://img.shields.io/badge/-get-darkgreen?style=for-the-badge)
 
 
 ```shell
@@ -270,7 +270,7 @@ Status | Type         | Description                                             
 * **IPNs may be sent multiple times until a confirmation (HTTP 200) is received.**
 
 
-#### **Example Usage:**
+#### **Endpoint:**
 
 **IPN Request Format:**
 
@@ -324,9 +324,9 @@ Status | Type         | Description                                             
 * **A <code>POST</code> request is sent with the invoice identifier.**
 * **The response confirms whether the void was successful.**
 
-#### **Example Usage:**
+#### **Endpoint:**
 
-![POST](https://img.shields.io/badge/request-POST-yellow?style=for-the-badge)
+![POST](https://img.shields.io/badge/-POST-yellow?style=for-the-badge)
 
 ```shell
 https://api.payop.com/v1/checkout/void
