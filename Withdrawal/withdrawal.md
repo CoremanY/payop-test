@@ -168,7 +168,7 @@ idempotency-key: YOUR_UNIQUE_UUID  (Optional, recommended)
 #### **🟦 Volet (method: 14)**
 
 
-```shell
+```json
 {
  "direction": "Salary for September",
  "email": "recipient@example.com"
@@ -182,7 +182,7 @@ idempotency-key: YOUR_UNIQUE_UUID  (Optional, recommended)
 #### **🟧 PayDo (method: 15)**
 
 
-```shell
+```json
 {
  "direction": "Commission payout",
  "referenceId": "recipient@example.com",
@@ -266,7 +266,7 @@ curl -X GET "https://payop.com/v1/instrument-settings/payment-methods/available-
 ### **Response Example:**
 
 
-```shell
+```json
 {
  "data": [
    {
@@ -296,6 +296,7 @@ curl -X GET "https://payop.com/v1/instrument-settings/payment-methods/available-
 4. **Poll Status every 10 minutes using the <code>GET /withdrawals/user-withdrawals?query[identifier]</code> endpoint.**
 5. **Update internal status only after receiving a final status (<code>accepted</code> or <code>rejected</code>).**
 
+---
 
 ### **5. IPN – Withdrawal Notifications**
 
@@ -327,7 +328,7 @@ curl -X GET "https://payop.com/v1/instrument-settings/payment-methods/available-
 ### **IPN Payload Example:**
 
 
-```shell
+```json
 {
  "transaction": {
    "withdrawalId": "d024f697-ba2d-456f-910e-4d7fdfd338dd",
