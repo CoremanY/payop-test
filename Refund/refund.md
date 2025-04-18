@@ -32,7 +32,7 @@ https://api.payop.com/v1/refunds/create
 
 
 
-### **Headers:**
+![HEADERS](https://img.shields.io/badge/-headers-purple?style=for-the-badge)
 
 
 ```shell
@@ -210,7 +210,7 @@ https://api.payop.com/v1/refunds/user-refunds?query[identifier]={payopRefundId}
 
 
 
-### **Headers:**
+![HEADERS](https://img.shields.io/badge/-headers-purple?style=for-the-badge)
 
 
 ```shell
@@ -286,7 +286,7 @@ https://api.payop.com/v1/refunds/user-refunds
 
 
 
-### **Headers:**
+![HEADERS](https://img.shields.io/badge/-headers-purple?style=for-the-badge)
 
 
 ```shell

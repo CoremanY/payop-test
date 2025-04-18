@@ -13,8 +13,8 @@
 #### **How It Works:**
 
 * **Clients must send a JWT token in the <code>Authorization</code> header with each API request.**
-* **Example of required headers:**
 
+![HEADERS](https://img.shields.io/badge/-headers-purple?style=for-the-badge)
 
 ```
 Content-Type: application/json  
@@ -214,7 +214,7 @@ https://api.payop.com/v1/checkout/check-invoice-status/{invoiceID}
 
 
 
-### **Headers:**
+![HEADERS](https://img.shields.io/badge/-headers-purple?style=for-the-badge)
 
 
 ```shell

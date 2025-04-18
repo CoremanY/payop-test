@@ -34,7 +34,7 @@ https://api.payop.com/v1/withdrawals/user-withdrawals?query[identifier]={withdra
 
 
 
-### **Headers:**
+![HEADERS](https://img.shields.io/badge/-headers-purple?style=for-the-badge)
 
 
 ```shell
@@ -142,7 +142,7 @@ https://api.payop.com/v1/withdrawals/create-mass
 
 
 
-### **Headers:**
+![HEADERS](https://img.shields.io/badge/-headers-purple?style=for-the-badge)
 
 
 ```shell
