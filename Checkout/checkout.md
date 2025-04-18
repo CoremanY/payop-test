@@ -166,7 +166,7 @@ curl -X POST \
 
 
 ```shell
-GET https://api.payop.com/v1/checkout/check-invoice-status/{invoiceID}
+![GET](https://img.shields.io/badge/-GET-blue?style=for-the-badge) https://api.payop.com/v1/checkout/check-invoice-status/{invoiceID}
 ```
 
 
