@@ -42,9 +42,7 @@ A **Checkout IPN (Instant Payment Notification)** is a server-to-server message 
 
 
 *  **Sent after a final status is determined** for a transaction (e.g., payment succeeded or failed). \
-
 *  **Delivered to the IPN URL** configured in your project settings under the *Checkout* section. \
-
 *  **Repeated automatically** until your server responds with an HTTP `200 OK`, confirming successful receipt.
 
 
