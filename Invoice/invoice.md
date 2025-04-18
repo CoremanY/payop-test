@@ -185,7 +185,7 @@ curl -X POST "https://api.payop.com/v1/invoices/create" \
 #### **Successful Response Example:**
 
 
-```shell
+```json
 {
    "data": "ec2aa893-e7f5-4a0d-98c4-ef1a424eaf5d",
    "status": 1
@@ -202,7 +202,7 @@ curl -X POST "https://api.payop.com/v1/invoices/create" \
 #### **Error Response Example (Wrong Signature):**
 
 
-```shell
+```json
 {
  "message": "Wrong signature"
 }
@@ -249,7 +249,7 @@ curl -X GET "https://api.payop.com/v1/invoices/{invoiceID}" \
 #### **Successful Response Example:**
 
 
-```shell
+```json
 {
    "data": {
        "identifier": "81962ed0-a65c-4d1a-851b-b3dbf9750399",
@@ -290,7 +290,7 @@ curl -X GET "https://api.payop.com/v1/invoices/{invoiceID}" \
 #### **Error Response Example (Invoice Not Found):**
 
 
-```shell
+```json
 {
  "message": "Invoice (Invoice_ID) not found"
 }
@@ -399,7 +399,7 @@ curl -X GET "https://api.payop.com/v1/instrument-settings/payment-methods/availa
 #### **Successful Response Example:**
 
 
-```shell
+```json
 {
    "data": [
        {
@@ -439,7 +439,7 @@ curl -X GET "https://api.payop.com/v1/instrument-settings/payment-methods/availa
 #### **Error Response Example (Invalid Token):**
 
 
-```shell
+```json
 {
  "message": "Authorization token invalid"
 }
